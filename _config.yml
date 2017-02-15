@@ -1,6 +1,6 @@
 # Site settings
 title: Albert_LZG's Blog
-header-img: "img/facebook.jpg"
+header-img: "img/red.jpg"
 tagline: "cn"  
 description: "李志刚|读书·编程·思考"  
 baseurl: ""
@@ -14,7 +14,7 @@ owner:
 
 # Data
 gavatar: 
-favicon: img/blog_logo.png
+favicon: img/blog_logo.jpeg
 
 douban_username:  
 twitter_username: 
@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "post"
       author: "CnFeat"
-      header-img: "img/facebook.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/red.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
