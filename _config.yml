@@ -1,8 +1,8 @@
 # Site settings
 title: Albert_LZG's Blog
-header-img: "img/red.jpg"
+header-img: "img/orange.jpg"
 tagline: "cn"  
-description: "李志刚|读书·编程·思考"  
+description: "李志刚|读书·编程·思"  
 baseurl: ""
 url: ""  
 
@@ -18,7 +18,7 @@ favicon: img/blog_logo.jpeg
 
 douban_username:  
 twitter_username: 
-github_username: 
+github_username: AlbertLZG
 facebook_username: 
 weibo_username: 
 zhihu_username: 
@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "post"
       author: "CnFeat"
-      header-img: "img/red.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/orange.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
