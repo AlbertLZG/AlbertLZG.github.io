@@ -19,7 +19,6 @@ description:
 
 >Note that 1 is typically treated as an ugly number.
 
->Have you met this question in a real interview? Yes
 >Example
 >If n=9, return 10.
 
@@ -37,7 +36,6 @@ description:
 
 >我们可以认为1也是一个丑数
 
->您在真实的面试中是否遇到过这个题？ Yes
 >样例
 >如果n = 9， 返回 10
 

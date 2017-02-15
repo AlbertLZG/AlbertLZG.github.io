@@ -5,8 +5,8 @@
     <description>李志刚|读书·编程·思</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 15 Feb 2017 22:19:27 +0800</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 22:19:27 +0800</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 22:31:07 +0800</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 22:31:07 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -34,8 +34,7 @@
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Have you met this question in a real interview? Yes
-Example
+  &lt;p&gt;Example
 If n=9, return 10.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -65,8 +64,7 @@ O(n log n) or O(n) time.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;您在真实的面试中是否遇到过这个题？ Yes
-样例
+  &lt;p&gt;样例
 如果n = 9， 返回 10&lt;/p&gt;
 &lt;/blockquote&gt;
 
