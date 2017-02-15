@@ -5,13 +5,13 @@
     <description>李志刚|读书·编程·思</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 15 Feb 2017 22:12:43 +0800</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 22:12:43 +0800</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 22:19:27 +0800</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 22:19:27 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>lintcode “丑数 II” 题解</title>
-        <description>&lt;p&gt;题目如下：&lt;/p&gt;
+        <description>&lt;p&gt;##题目如下：&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Ugly Number II&lt;/p&gt;
@@ -70,7 +70,7 @@ O(n log n) or O(n) time.&lt;/p&gt;
 如果n = 9， 返回 10&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;题解：&lt;/p&gt;
+&lt;p&gt;##题解：&lt;/p&gt;
 
 &lt;p&gt;由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举时不行的
 比如下面：&lt;/p&gt;
@@ -189,7 +189,7 @@ ugly[1]*5,……
 
 &lt;p&gt;求第四个丑数时index2=1，index3=1，index5=0，因此比较ugly[1]&lt;em&gt;2, ugly[1]&lt;/em&gt;3, ugly[0]&lt;em&gt;5三个数，得ugly[1]&lt;/em&gt;2是其中最小值，是第四个丑数，这时另index2从1增加到2。&lt;/p&gt;
 
-&lt;p&gt;代码：&lt;/p&gt;
+&lt;p&gt;##代码：&lt;/p&gt;
 
 &lt;p&gt;注意：代码需要考虑有重数问题，即当ugly[index2]&lt;em&gt;2, ugly[index3]&lt;/em&gt;3, ugly[index5]&lt;em&gt;5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]&lt;/em&gt;2 = ugly[index3]&lt;em&gt;3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]&lt;/em&gt;2添加进丑数序列就意义着ugly[index3]*3也被添加进去了。下面两段代码均有考虑该情况。&lt;/p&gt;
 
