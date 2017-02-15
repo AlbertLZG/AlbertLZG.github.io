@@ -1,6 +1,6 @@
 # Site settings
 title: Albert_LZG's Blog
-header-img: "img/facebookjpg"
+header-img: "img/facebook.jpg"
 tagline: "cn"  
 description: "李志刚|读书·编程·思考"  
 baseurl: ""
@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "post"
       author: "CnFeat"
-      header-img: "img/facebookjpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/facebook.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
