@@ -22,7 +22,7 @@ layout: default
 
 - 深度学习
 - 计算机视觉
-- [计算机编程](https://github.com/AlbertLZG/AlbertLZG_Lintcode／)
+- [计算机编程](https://github.com/AlbertLZG/AlbertLZG_Lintcode)
 - 电子设计
 - 嵌入式编程
 
