@@ -1,20 +1,20 @@
 # Site settings
-title: 读立写生
-header-img: "img/green.jpg"
+title: Albert_LZG's Blog
+header-img: "img/facebookjpg"
 tagline: "cn"  
-description: "陈素封|读而立·写而生"  
+description: "李志刚|读书·编程·思考"  
 baseurl: ""
-url: "http://cnfeat"  
+url: ""  
 
 # About/contact
 owner: 
-  name: " CnFeat"
-  email: CnFeat@gmail.com
-  bio: "写就是写的报酬"
+  name: "Albert_LZG"
+  email: 
+  bio: 
 
 # Data
-gavatar: http://dreamofbook.qiniudn.com/Az..png
-favicon: img/favicon.png
+gavatar: 
+favicon: img/blog_logo.png
 
 douban_username:  
 twitter_username: 
@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "post"
       author: "CnFeat"
-      header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/facebookjpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
