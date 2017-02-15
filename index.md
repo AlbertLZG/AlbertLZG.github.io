@@ -15,8 +15,8 @@ layout: default
 - Practice makes perfect
 
 - There is nothing noble in being superior to some other man.The true nobility is in being superior to your previous self.
-                                                              
-															————Ernest Hemingwary
+                        
+By Ernest Hemingwary
 
 
 ###领域：
