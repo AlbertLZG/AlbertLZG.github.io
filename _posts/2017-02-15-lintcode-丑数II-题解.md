@@ -46,36 +46,36 @@ description: 今天下午临时定下要出差。已抵浙江，刚刚安顿。�
 由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举时不行的
 比如下面：
 
-//c++:
-class Solution {  
-public:  
-    /* 
-     * @param n an integer 
-     * @return the nth prime number as description. 
-     */  
-    int nthUglyNumber(int n) {  
-        // write your code here  
-        int countN = 0;  
-        int m = 0;  
-        int lastNumber = 2;  
-        while(countN < n)  
-        {  
-            m++;  
-            int number = m;  
-            while(number % 2 == 0)  
-                number = number / 2;  
-            while(number % 3 == 0)  
-                number = number / 3;  
-            while(number % 5 == 0)  
-                number = number / 5;  
-            if(number == 1)  
+    //c++:
+    class Solution {  
+    public:  
+        /* 
+         * @param n an integer 
+         * @return the nth prime number as description. 
+         */  
+        int nthUglyNumber(int n) {  
+            // write your code here  
+            int countN = 0;  
+            int m = 0;  
+            int lastNumber = 2;  
+            while(countN < n)  
             {  
-                countN++;  
+                m++;  
+                int number = m;  
+                while(number % 2 == 0)  
+                    number = number / 2;  
+                while(number % 3 == 0)  
+                    number = number / 3;  
+                while(number % 5 == 0)  
+                    number = number / 5;  
+                if(number == 1)  
+                {  
+                    countN++;  
+                }  
             }  
+            return m;  
         }  
-        return m;  
-    }  
-};  
+    };  
 
 思路：
 
@@ -113,7 +113,7 @@ ugly[2] = min(ugly[1]*2, ugly[0]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^
 	
     这里面最小的数是ugly[1]*2。
 	
-同理，
+    同理，
 	
     ugly[0]*3, ugly[0]*3*3,……
 	
