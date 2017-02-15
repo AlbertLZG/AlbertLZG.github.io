@@ -5,9 +5,8 @@ description: "Bio"
 header-img: "img/green.jpg"
 ---
 
-
 <center>
-    <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.jpeg" align="center"></p>
+    <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" align="center"></p>
 </center>
 
 欢迎来到李志刚的博客。

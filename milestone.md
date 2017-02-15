@@ -1,4 +1,4 @@
----
+png---
 layout: page
 title: "recommend"
 description: "路漫漫其修远兮，吾将上下而求索"
@@ -7,7 +7,7 @@ header-img: "img/zhihu.jpg"
 
 
 <center>
-    <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.jpeg" align="center"></p>
+    <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" align="center"></p>
 </center>
 
 
