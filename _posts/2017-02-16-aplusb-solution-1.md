@@ -17,6 +17,7 @@ There is no need to read data from standard input stream. Both parameters are gi
 Clarification:
 >Are a and b both 32-bit integers?    
 >——Yes.
+
 >Can I use bit operation?    
 >——Sure you can.
 
@@ -31,9 +32,10 @@ Given a=1 and b=2 return 3
 
 说明：
 >a和b都是 32位 整数么？
-——是的
-我可以使用位运算符么？
-——当然可以
+>——是的
+
+>我可以使用位运算符么？
+>——当然可以
 
 样例：
 如果 a=1 并且 b=2，返回3
