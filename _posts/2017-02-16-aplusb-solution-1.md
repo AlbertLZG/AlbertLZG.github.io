@@ -10,7 +10,7 @@ tags: [算法,数据结构,lintcode题解(python)]
 
 Write a function that add two numbers A and B. You should not use + or any arithmetic operators.
 
- Notice:
+Notice:
 There is no need to read data from standard input stream. Both parameters are given in function aplusb, you job is to calculate the sum and return it.
 
 Clarification:
@@ -24,9 +24,10 @@ Example:
 Given a=1 and b=2 return 3
 
 #题目 A + B 问题：
+
 给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
 
- 注意事项
+注意事项
 你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。
 
 说明：
@@ -40,27 +41,31 @@ Given a=1 and b=2 return 3
 如果 a=1 并且 b=2，返回3
 
 ##思路：
+
 首先，题中给定，所有数均为32位大小。
+
 当不考虑进位时，加法可以用位运算“按位异或^”代替：
 1 + 1 = 1 ^ 1 = 0
 1 + 0 = 1 ^ 0 = 1
 0 + 1 = 0 ^ 1 = 1
 0 + 0 = 0 ^ 0 = 0
+
 而进位可以用位运算“按位与&”获取：
 0 + 0 = 0 & 0 = 0 = 不进位
 1 + 0 = 1 & 0 = 0 = 不进位
 0 + 1 = 0 & 1 = 0 = 不进位
 1 + 1 = 1 & 1 = 1 = 进位
+
 如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&y)<<1
 （注：需要左移一位表示每一位产生的进位是与高一位的数字相加的）
 因此，有：
 1. x^y //执行加法
-2. (x&y)<<1 //进位操作
-最后，我们有：x+y = x^y+(x&y)<<1
+2. \(x&y\)<<1 //进位操作
+最后，我们有：x+y = x^y+\(x&y\)<<1
     
     证明：x^y是不考虑进位时加法结果。当二进制位同时为1时，才    有进位，因此(x&y)<<1进位产生的值，称为进位补偿。将两者相    加便是完整加法结果。
 
-由于 x^y+(x&y)<<1 也可以表示为(x^y)^((x&y)<<1)与(x^y)&((x&y)<<1)<<1之和，因此可以迭代地使用1式和2式来将不考虑进位的加法结果与进位产生的加数相加，直到进位为0时，得到的不考虑进位的加法结果（即1式结果）即为最终结果。
+由于 x^y+\(x&y\)<<1 也可以表示为\(x^y\)^\(\(x&y\)<<1\)与\(x^y\)&\(\(x&y\)<<1\)<<1之和，因此可以迭代地使用1式和2式来将不考虑进位的加法结果与进位产生的加数相加，直到进位为0时，得到的不考虑进位的加法结果（即1式结果）即为最终结果。
     
     下面是两位数的加法：
     11+01 = 100  // 原始的加法
@@ -79,6 +84,7 @@ Given a=1 and b=2 return 3
 代码：
 
 ####python：
+
 ```
 class Solution:
     """
@@ -98,6 +104,7 @@ class Solution:
         return a
 ```
 ####c：
+
 ```
 1 int bitAdd(int a,int b)
 2 {
@@ -110,6 +117,7 @@ class Solution:
 ```
 
 ####c++:
+
 ```
 class Solution {
     /*
@@ -135,7 +143,9 @@ class Solution {
     }
 };
 ```
+
 或者
+
 ```
 class Solution {
     /*
