@@ -15,6 +15,7 @@ Write a function that add two numbers A and B. You should not use + or any arith
 There is no need to read data from standard input stream. Both parameters are given in function aplusb, you job is to calculate the sum and return it.
 
 Clarification:
+
     Are a and b both 32-bit integers?    
     ——Yes.
     Can I use bit operation?    
@@ -30,6 +31,7 @@ Given a=1 and b=2 return 3
 你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。
 
 说明：
+
     a和b都是 32位 整数么？
     ——是的
     我可以使用位运算符么？
