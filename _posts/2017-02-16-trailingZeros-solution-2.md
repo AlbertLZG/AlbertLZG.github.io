@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: lintcode "尾部的零"问题 题解：
 date: 2017-2-16
 categories: blog

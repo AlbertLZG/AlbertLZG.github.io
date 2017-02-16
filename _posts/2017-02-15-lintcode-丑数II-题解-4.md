@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: lintcode “丑数 II” 题解
 date: 2017-02-15
 categories: blog

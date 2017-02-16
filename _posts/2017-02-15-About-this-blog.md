@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: 关于这个博客
 date: 2017-2-15
 categories: blog
