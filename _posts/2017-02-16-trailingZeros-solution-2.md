@@ -1,12 +1,11 @@
 ---
 layout: post
-title: lintcode "尾部的零"问题 题解：
-date: 2017-2-16
+title: lintcode "尾部的零"问题 题解
+date: 2017-02-16
 categories: blog
-description: lintcode
 tags: [算法,数据结构,lintcode题解(python)]
 ---
-----------
+
 #题目 "Trailing Zeros" Problem:
 
 Write an algorithm which computes the number of trailing zeros in n factorial.
