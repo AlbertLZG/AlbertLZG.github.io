@@ -47,12 +47,7 @@ defaults:
       header-img: "img/orange.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
-comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : 
-  disqus :
-      short_name : 
+intensedebate_comments: true
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: 
