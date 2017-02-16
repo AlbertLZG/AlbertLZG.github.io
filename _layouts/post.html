@@ -54,16 +54,15 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
+
+                    {% if site.intensedebate_comments %}
+                        {% include intensedebate-comments.html %}
+                    {% endif %}
             </div>
         </div>
     </div>
 </article>
 
-<script>
-        {% if site.intensedebate_comments %}
-                {% include intensedebate-comments.html %}
-        {% endif %}
-</script>
 
 <!-- async load function -->
 <script>
