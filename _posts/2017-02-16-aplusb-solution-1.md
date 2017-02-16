@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: lintcode "A + B"问题 题解：
 date: 2017-2-16
 categories: blog
