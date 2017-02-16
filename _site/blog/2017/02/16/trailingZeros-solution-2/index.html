@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="李志刚|读书·编程·思">
+
+    <title>lintcode "尾部的零"问题 题解： - Albert_LZG's Blog</title>
+
+    <link rel="canonical" href="http://localhost:4000/blog/2017/02/16/trailingZeros-solution-2/">
+
+    <!-- Icons -->
+  <link rel="shortcut icon" href="img/blog_logo1.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+
+
+
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Albert_LZG's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/archive/">Archive</a>
+                </li>
+                
+                <li>
+                    <a href="/tags/">repository</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/orange.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="Tags">
+                        
+                        <a class="tag" href="/Tags/#算法" title="算法">算法</a>
+                        
+                        <a class="tag" href="/Tags/#数据结构" title="数据结构">数据结构</a>
+                        
+                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
+                        
+                    </div>
+                    <h1>lintcode "尾部的零"问题 题解：</h1>
+                    
+                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <hr />
+<p>#题目 “Trailing Zeros” Problem:</p>
+
+<p>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
+
+<p>Example
+11! = 39916800, so the out should be 2</p>
+
+<p>Challenge 
+O(log N) time</p>
+
+<p>#题目 “尾部的零”问题:</p>
+
+<p>设计一个算法，计算出n阶乘中尾部零的个数</p>
+
+<p>样例
+11! = 39916800，因此应该返回 2</p>
+
+<p>挑战 
+O(logN)的时间复杂度</p>
+
+<p>##思路：</p>
+
+<p>考虑将N! = 1 × 2 ×３× 4 ×……×N中的每一个因数进行质因数分解，结果为：1 × 2 × 3 × (2 × 2) × 5 × (2 × 3) × 7 × (2 × 2 ×2) ×……</p>
+
+<p>10进制数结尾的每一个0都表示有一个因数10存在（同理，对于一个M进制的数，让结尾多一个0就等价于乘以M）。10可以分解为2 × 5（只有质数2和5相乘能产生0，别的任何两个质数相乘都不能产生0），而每一个2和5相乘只产生一个0。</p>
+
+<p>所以，分解后的整个因数式中有多少对(2, 5)，结果中就有多少个0，而分解的结果中，2的个数显然是多于5的每一个偶数都包含至少一个2），因此，有多少个5，就有多少个(2, 5)对。</p>
+
+<p>n的阶乘的质因数分解式中5的个数可以用如下方法求：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1000的阶乘末尾0的个数:
+（下面的“／”代表“取整除法”）
+1000/5 + 1000/25 + 1000/125 + 1000/625 
+= 200 + 40 + 8 + 1 
+= 249(个)
+</code></pre>
+</div>
+
+<p>例子：求26的阶乘的尾部有多少个0. 
+26！ = 1 × 2 ×３× 4 × <strong>5</strong> × 6 × 7 × 8 × 9 × <strong>10</strong> × 11 × 12 × 13× 14 × <strong>15</strong> × 16 × 17 × 18 × 19 × <strong>20</strong> × 21 × 22 ×2３× 24 × <strong><em>25</em></strong> × 26 
+其中<strong>5</strong>、<strong>10</strong>、<strong>15</strong>、<strong>20</strong>各包含一个5，<strong><em>25</em></strong>包含两个5，共有 26/5 + 26/25 = 6（个）5相乘</p>
+<blockquote>
+  <p>25其实可以分解成2个5相乘，而26/5只计算了一个5，因此还要再加26/25.</p>
+</blockquote>
+
+<p>##代码：
+####python：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
+    # @param n a integer
+    # @return ans a integer
+    def trailingZeros(self, n):
+        zeros = 0
+        while n &gt; 0:
+            zeros += n / 5
+            n /= 5
+        return zeros
+</code></pre>
+</div>
+
+<p>####java：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+    /*
+     * param n: As desciption
+     * return: An integer, denote the number of trailing zeros in n!
+     */
+    public long trailingZeros(long n) {
+        long count = 0;
+        for(int i = 1; Math.pow(5,i) &lt;= n; i++) {
+            count += n / (long)Math.pow(5,i);//注意强制类型转换
+        }
+        return count;
+    }
+};
+</code></pre>
+</div>
+<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
+
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode "A + B"问题 题解：">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                <!-- Duoshuo Share start -->
+                <style>
+                    .ds-share{
+                        text-align: right;
+                    }
+                    
+                    @media only screen and (max-width: 700px) {
+                        .ds-share {
+
+                        }
+                    }
+                </style>
+
+                <div class="ds-share"
+                    data-thread-key="/blog/2017/02/16/trailingZeros-solution-2" data-title="lintcode "尾部的零"问题 题解："
+                    data-images="http://localhost:4000/img/orange.jpg"
+                    data-content="
+#题目 “Trailing Zeros” Problem:
+
+Write an algorithm which computes the number ... | Microdust:Azeril's blog"
+                    data-url="http://localhost:4000/blog/2017/02/16/trailingZeros-solution-2/">
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- Duoshuo Share end-->
+
+
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread" data-thread-key="/blog/2017/02/16/trailingZeros-solution-2" data-title="lintcode "尾部的零"问题 题解：" data-url="http://localhost:4000/blog/2017/02/16/trailingZeros-solution-2/"></div>
+                </div>
+                <!-- 多说评论框 end -->
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"cnfeat"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- kill the Facebook and Weibo -->
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li>
+                        <a href="https://github.com/AlbertLZG">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <!--
+                    
+                    -->
+
+                    <!--
+                    
+                    -->
+
+                    
+                    <!--
+                    
+                    -->
+
+                </ul>
+                <p class="copyright text-muted">
+                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+
+
+</body>
+
+</html>
