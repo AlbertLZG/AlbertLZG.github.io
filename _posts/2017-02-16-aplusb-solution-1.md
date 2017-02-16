@@ -1,179 +1,199 @@
 ---
 layout: post
-title: lintcode "A + B"问题 题解
-date: 2017-02-16
+title: lintcode “丑数 II” 题解
+date: 2017-02-15
 categories: blog
 tags: [算法,数据结构,lintcode题解(python)]
 ---
 
-#题目 A + B Problem：
+#题目Ugly Number II：
 
-Write a function that add two numbers A and B. You should not use + or any arithmetic operators.
+Ugly number is a number that only have factors 2, 3 and 5.
+Design an algorithm to find the nth ugly number. The first 10 ugly numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12...
 
-Notice:
-There is no need to read data from standard input stream. Both parameters are given in function aplusb, you job is to calculate the sum and return it.
+Notice：
+Note that 1 is typically treated as an ugly number.
 
-Clarification:
+Example：
+If n=9, return 10.
 
-    Are a and b both 32-bit integers?    
-    ——Yes.
-    Can I use bit operation?    
-    ——Sure you can.
+Challenge 
+O(n log n) or O(n) time.
 
-Example:
-Given a=1 and b=2 return 3
 
-#题目 A + B 问题：
+#丑数 II
 
-给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
+设计一个算法，找出只含素因子2，3，5 的第 n 大的数。
+符合条件的数如：1, 2, 3, 4, 5, 6, 8, 9, 10, 12...
 
-注意事项
-你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。
-
-说明：
-
-    a和b都是 32位 整数么？
-    ——是的
-    我可以使用位运算符么？
-    ——当然可以
+注意事项：
+我们可以认为1也是一个丑数
 
 样例：
-如果 a=1 并且 b=2，返回3
+如果n = 9， 返回 10
 
-##思路：
+挑战：
+O(n log n) 或者 O(n) 时间复杂度.
 
-首先，题中给定，所有数均为32位大小。
+##题解：
 
-当不考虑进位时，加法可以用位运算“按位异或^”代替：
-1 + 1 = 1 ^ 1 = 0
-1 + 0 = 1 ^ 0 = 1
-0 + 1 = 0 ^ 1 = 1
-0 + 0 = 0 ^ 0 = 0
+由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举是不行的。比如下面：
 
-而进位可以用位运算“按位与&”获取：
-0 + 0 = 0 & 0 = 0 = 不进位
-1 + 0 = 1 & 0 = 0 = 不进位
-0 + 1 = 0 & 1 = 0 = 不进位
-1 + 1 = 1 & 1 = 1 = 进位
+```c++:
+class Solution {  
+public:  
+    /* 
+     * @param n an integer 
+     * @return the nth prime number as description. 
+     */  
+    int nthUglyNumber(int n) {  
+        // write your code here  
+        int countN = 0;  
+        int m = 0;  
+        int lastNumber = 2;  
+        while(countN < n)  
+        {  
+            m++;  
+            int number = m;  
+            while(number % 2 == 0)  
+                number = number / 2;  
+            while(number % 3 == 0)  
+                number = number / 3;  
+            while(number % 5 == 0)  
+                number = number / 5;  
+            if(number == 1)  
+            {  
+                countN++;  
+            }  
+        }  
+        return m;  
+    }  
+};
+```
+###思路：
 
-如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&y)<<1
-（注：需要左移一位表示每一位产生的进位是与高一位的数字相加的）
-因此，有：
-1. x^y //执行加法
-2. \(x&y\)<<1 //进位操作
-最后，我们有：x+y = x^y+\(x&y\)<<1
+由丑数的定义可知，任何一个丑数都是2^i\*3^j\*5^k这种形式的，并且任意一个丑数乘以2、3、5后均可以得到新的丑数。
+
+* 第一个丑数ugly[0]为1，此时i = j = k = 0。
+
+* 求解第二个丑数：
+ugly[1] = min(ugly[0]\*2, ugly[0]\*3, ugly[0]\*5) = min(1\*2, 1\*3, 1\*5) = 2 = 2^1\*3^0\*5^0
+即此时的i = 1。
+
+* 求解第三个丑数：
+ugly[2] = min(ugly[1]\*2, ugly[0]\*3, ugly[0]\*5) = min(2\*2, 1\*3, 1\*5) = 3 = 2^0\*3^1\*5^0
+即此时的j = 1
+
+    ####思考:
+
+1. 为什么这里要用2前面的乘数是ugly[1]而不是ugly[0]?
+
+    因为ugly[0]\*2已经作为第二个丑数赋值给了ugly[1]。
+
+2. 为什么这三个数的最小值就是还没有添加到丑数序列中的所有丑数的最小值？
+
+    因为任意一个丑数乘以2、3、5后均可以得到新的丑数，同时，任意一个丑数都可以由前面的某一丑数乘以2、3或者5得到，除了第一个丑数1。因此还没有添加进丑数序列的丑数有：
+
+        ugly[0]*2*2, ugly[0]*2*2*2, ……（ugly[0]*2作为已经赋给ugly[1]了）
+        ugly[1]*2, ugly[1]*2*2,……（注意ugly[1]*2 = ugly[0]*2*2，…… ）
+        ugly[2]*2, ugly[2]*2*2,……
+        …… …… …… ……
+        ugly[n]*2, ugly[n]*2*2,……
+
+    上面丑数序列里最小的数是ugly[1]*2。
+
+    同理，
+
+        ugly[0]*3, ugly[0]*3*3,……
+        ugly[1]*3,……
+        ……
+    最小的数是ugly[0]*3
+
+        ugly[0]*5, ugly[0]*5*5,……
+        ugly[1]*5,……
+        ……
+    里面最小的数是ugly[0]*5
+
+    因此只需要比较ugly[1]*2, ugly[0]*3, ugly[0]*5三个数，将其中的最小值作为下一个要添加的丑数即可。
+
+3. 为什么这里要用3和5前面的乘数是ugly[0]而不是ugly[1]?
     
-    证明：x^y是不考虑进位时加法结果。当二进制位同时为1时，才    有进位，因此(x&y)<<1进位产生的值，称为进位补偿。将两者相    加便是完整加法结果。
+    因为ugly[1]>ugly[0],而ugly[0]*3和ugly[0]*5均是还没有添加进丑数序列的丑数，它们都分别比ugly[1]*3和ugly[1]*5小。
 
-由于 x^y+\(x&y\)<<1 也可以表示为\(x^y\)^\(\(x&y\)<<1\)与\(x^y\)&\(\(x&y\)<<1\)<<1之和，因此可以迭代地使用1式和2式来将不考虑进位的加法结果与进位产生的加数相加，直到进位为0时，得到的不考虑进位的加法结果（即1式结果）即为最终结果。
-    
-    下面是两位数的加法：
-    11+01 = 100  // 原始的加法
-    // 位运算分别计算1）和2）
-    1）11 ^ 01 = 10
-    2）(11 & 01) << 1 = 10
-    //用普通的加法去运算可以得到 10 + 10 = 100
-    //但是由于不允许使用“+”，所以要让两个数再按前面的方法计算：
-    1) 10 ^ 10 = 00
-    2) (10 & 10) << 1 = 100
-    再次迭代：
-    1) 00 ^ 100 = 100
-    2) (00 & 100）<< 1 = 0
-    此时进位为0，式1)结果即为最终结果
+4. 那2、3、5前面的乘数应该等于多少？
 
-代码：
+    初始时设置索引变量index2=index3=index5=0分别代表相应乘数前面的数字是哪个丑数，即ugly[index2],ugly[index3],ugly[index5]。每当ugly[index2]*2被添加进丑数序列中时，令index2增加一，否则保持不变。3和5同理。下面用该方法求第四个丑数：)
+
+* 求解第四个丑数：
+
+    ugly[2] = min(ugly[1]\*2, ugly[1]\*3, ugly[0]\*5) = min(2\*2, 1\*3, 1\*5) = 3 = 2^0\*3^1\*5^0
+
+    初始化令index2=index3=index5=0；
+    求第二个丑数得到ugly[index2]\*2=ugly[0]\*2=2，因此index2从0增加到1；
+    求第三个丑数时得ugly[index3]\*3=ugly[0]\*3=3，因此index3从0增加到1；
+    求第四个丑数时index2=1，index3=1，index5=0，因此比较ugly[1]\*2, ugly[1]\*3, ugly[0]\*5三个数，得ugly[1]\*2是其中最小值，这时令index2从1增加到2。
+
+##代码：
+
+    注意：代码需要考虑有重数问题，即当ugly[index2]\*2, ugly[index3]\*3, ugly[index5]\*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]\*2 = ugly[index3]\*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]\*3也被添加进去了。下面两段代码均有考虑该情况。
 
 ####python：
-
 ```
 class Solution:
     """
-    @param a: The first integer
-    @param b: The second integer
-    @return:  The sum of a and b
+    @param {int} n an integer.
+    @return {int} the nth prime number as description.
     """
-    def aplusb(self, a, b):
-        # write your code here, try to do it without arithmetic operators.
-        import ctypes
-        a = ctypes.c_int32(a).value
-        b = ctypes.c_int32(b).value
-        while b != 0:
-            carry = ctypes.c_int32(a & b).value
-            a = ctypes.c_int32(a ^ b).value
-            b = ctypes.c_int32(carry << 1).value
-        return a
-```
-####c：
-
-```
-1 int bitAdd(int a,int b)
-2 {
-3     if(b==0)
-4         return a;
-5     int sum = a^b;
-6     int carry =(a&b)<<1;
-7     return bitAdd(sum,carry);
-8 }
+    def nthUglyNumber(self, n):
+        # write your code here
+        ugly = [1]
+        index2 = 0
+        index3 = 0
+        index5 = 0
+        for i in range(n):
+            temp_ugly = min(ugly[index2]*2,ugly[index3]*3,ugly[index5]*5)
+            ugly.append(temp_ugly)
+            index2 +=1 if temp_ugly >= ugly[index2]*2 else 0
+            index3 +=1 if temp_ugly >= ugly[index3]*3 else 0
+            index5 +=1 if temp_ugly >= ugly[index5]*5 else 0
+        return ugly[n-1]
 ```
 
-####c++:
-
+####c++：
 ```
-class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        int i = 0;
-        int res = 0;
-        int carry = 0;
-        for (; i<32; i++) {
-            int aa = (a >> i) & 1;
-            int bb = (b >> i) & 1;
-            res |= (aa ^ bb ^ carry) << i;
-            if (aa == 1 && bb == 1 || ((aa ==1 || bb == 1) && carry == 1)) {
-                carry = 1;
-            }
-            else carry = 0;
-        }
-        return res;
-    }
+class Solution {  
+public:  
+    /* 
+     * @param n an integer 
+     * @return the nth prime number as description. 
+     */  
+    int nthUglyNumber(int n) {  
+        // write your code here  
+        int *ugly = new int[n];  
+        ugly[0] = 1;  
+        int num_2 = 0;  
+        int num_3 = 0;  
+        int num_5 = 0;  
+        for(int i = 1;i<n;i++)  
+        {  
+            ugly[i] = min(min(ugly[num_2]*2,ugly[num_3]*3),ugly[num_5]*5);  
+            if(ugly[i] / ugly[num_2] == 2)  
+                num_2 ++;  
+            if(ugly[i] / ugly[num_3] == 3)  
+                num_3 ++;  
+            if(ugly[i] / ugly[num_5] == 5)  
+                num_5 ++;  
+        }  
+        return ugly[n-1];  
+    }  
 };
 ```
 
-或者
-
-```
-class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        while(b != 0){
-            int carry = a & b;
-            a = a ^ b;
-            b = carry << 1;
-        }
-        return a;
-    }
-}
-
-public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        if (b == 0) return a;
-        int sum = a^b;
-        int carry = (a&b)<<1;
-        return aplusb(sum, carry);
-    }
-```
-
-
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)
+
+
+
+
 
 
 
