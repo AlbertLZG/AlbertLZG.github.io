@@ -1,6 +1,6 @@
 ---
 layout: post
-title: lintcode "尾部的零"问题 题解
+title: lintcode “尾部的零” 题解
 date: 2017-02-16
 categories: blog
 tags: [算法,数据结构,lintcode题解(python)]
