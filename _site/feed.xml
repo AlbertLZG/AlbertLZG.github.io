@@ -5,14 +5,13 @@
     <description>李志刚|读书·编程·思</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 16 Feb 2017 10:43:26 +0800</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2017 10:43:26 +0800</lastBuildDate>
+    <pubDate>Thu, 16 Feb 2017 14:10:18 +0800</pubDate>
+    <lastBuildDate>Thu, 16 Feb 2017 14:10:18 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
-        <title>lintcode &quot;尾部的零&quot;问题 题解：</title>
-        <description>&lt;hr /&gt;
-&lt;p&gt;#题目 “Trailing Zeros” Problem:&lt;/p&gt;
+        <title>lintcode “尾部的零” 题解</title>
+        <description>&lt;p&gt;#题目 “Trailing Zeros” Problem:&lt;/p&gt;
 
 &lt;p&gt;Write an algorithm which computes the number of trailing zeros in n factorial.&lt;/p&gt;
 
@@ -106,9 +105,8 @@ O(logN)的时间复杂度&lt;/p&gt;
       </item>
     
       <item>
-        <title>lintcode &quot;A + B&quot;问题 题解：</title>
-        <description>&lt;hr /&gt;
-&lt;p&gt;#题目 A + B Problem：&lt;/p&gt;
+        <title>lintcode “A + B” 题解</title>
+        <description>&lt;p&gt;#题目 A + B Problem：&lt;/p&gt;
 
 &lt;p&gt;Write a function that add two numbers A and B. You should not use + or any arithmetic operators.&lt;/p&gt;
 
@@ -127,8 +125,9 @@ Can I use bit operation?
 &lt;p&gt;Example:
 Given a=1 and b=2 return 3&lt;/p&gt;
 
-&lt;p&gt;#题目 A + B 问题：
-给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。&lt;/p&gt;
+&lt;p&gt;#题目 A + B 问题：&lt;/p&gt;
+
+&lt;p&gt;给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。&lt;/p&gt;
 
 &lt;p&gt;注意事项
 你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。&lt;/p&gt;
@@ -145,19 +144,29 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;p&gt;样例：
 如果 a=1 并且 b=2，返回3&lt;/p&gt;
 
-&lt;p&gt;##思路：
-首先，题中给定，所有数均为32位大小。
-当不考虑进位时，加法可以用位运算“按位异或^”代替：
-1 + 1 = 1 ^ 1 = 0
+&lt;p&gt;##思路：&lt;/p&gt;
+
+&lt;p&gt;首先，题中给定，所有数均为32位大小。&lt;/p&gt;
+
+&lt;p&gt;当不考虑进位时，加法可以用位运算“按位异或^”代替：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 + 1 = 1 ^ 1 = 0
 1 + 0 = 1 ^ 0 = 1
 0 + 1 = 0 ^ 1 = 1
 0 + 0 = 0 ^ 0 = 0
-而进位可以用位运算“按位与&amp;amp;”获取：
-0 + 0 = 0 &amp;amp; 0 = 0 = 不进位
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;而进位可以用位运算“按位与&amp;amp;”获取：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0 + 0 = 0 &amp;amp; 0 = 0 = 不进位
 1 + 0 = 1 &amp;amp; 0 = 0 = 不进位
 0 + 1 = 0 &amp;amp; 1 = 0 = 不进位
 1 + 1 = 1 &amp;amp; 1 = 1 = 进位
-如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&amp;amp;y)«1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&amp;amp;y)«1
 （注：需要左移一位表示每一位产生的进位是与高一位的数字相加的）
 因此，有：&lt;/p&gt;
 &lt;ol&gt;
@@ -191,6 +200,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;p&gt;代码：&lt;/p&gt;
 
 &lt;p&gt;####python：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution:
     &quot;&quot;&quot;
     @param a: The first integer
@@ -210,6 +220,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;####c：&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 int bitAdd(int a,int b)
 2 {
 3     if(b==0)
@@ -222,6 +233,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;####c++:&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {
     /*
      * param a: The first integer
@@ -247,7 +259,9 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;p&gt;或者&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {
     /*
      * param a: The first integer
@@ -520,7 +534,7 @@ public:
 
 &lt;p&gt;#关于为什么想要开自己的博客？&lt;/p&gt;
 
-&lt;p&gt;博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的客
+&lt;p&gt;博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客
 网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网
 站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：&lt;/p&gt;
 
