@@ -16,9 +16,9 @@ There is no need to read data from standard input stream. Both parameters are gi
 
 Clarification:
 >Are a and b both 32-bit integers?    
-——Yes.
-Can I use bit operation?    
-——Sure you can.
+>——Yes.
+>Can I use bit operation?    
+>——Sure you can.
 
 Example:
 Given a=1 and b=2 return 3
