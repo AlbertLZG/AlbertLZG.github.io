@@ -13,11 +13,11 @@ Given a binary tree, return the preorder traversal of its nodes' values.
 Example
 Given:
 
-      1
+        1
+       / \
+      2   3
      / \
-    2   3
-   / \
-  4   5
+    4   5
 
 return [1,2,4,5,3].
 
@@ -189,11 +189,11 @@ Have you met this question in a real interview? Yes
 Example
 Given binary tree {3,9,20,#,#,15,7},
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
+      3
+     / \
+    9  20
+      /  \
+     15   7
 
 return its level order traversal as:
 
@@ -211,11 +211,11 @@ return its level order traversal as:
 
 给一棵二叉树 {3,9,20,#,#,15,7} ：
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
+      3
+     / \
+    9  20
+      /  \
+     15   7
 
 返回它的分层遍历结果：
 
