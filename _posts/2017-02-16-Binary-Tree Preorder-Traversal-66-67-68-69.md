@@ -1,6 +1,6 @@
 ---
 layout: post
-title: lintcode 2017-02-16-二叉树遍历 题解
+title: lintcode “二叉树遍历” 题解
 date: 2017-02-16
 categories: blog
 tags: [lintcode题解(python)]
