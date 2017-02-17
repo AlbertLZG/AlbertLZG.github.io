@@ -13,11 +13,11 @@ Given a binary tree, return the preorder traversal of its nodes' values.
 Example
 Given:
 
-    1
+      1
+     / \
+    2   3
    / \
-  2   3
- / \
-4   5
+  4   5
 return [1,2,4,5,3].
 
 #二叉树的前序遍历
@@ -32,11 +32,15 @@ return [1,2,4,5,3].
 样例
 给出一棵二叉树 {1,#,2,3},
 
-   1
+    1
+
     \
+
      2
+
     /
-   3
+
+    3
  返回 [1,2,3].
 
 
@@ -76,11 +80,15 @@ Given a binary tree, return the inorder traversal of its nodes' values.
 Example
 Given binary tree {1,#,2,3},
 
-   1
+    1
+
     \
-     2
+
+      2
+
     /
-   3
+
+    3
  
 
 return [1,3,2].
@@ -95,9 +103,13 @@ return [1,3,2].
 给出二叉树 {1,#,2,3},
 
    1
+
     \
+
      2
+
     /
+
    3
    
 返回 [1,3,2].
@@ -135,9 +147,13 @@ Example
 Given binary tree {1,#,2,3},
 
    1
+
     \
+
      2
+
     /
+
    3
 
 return [3,2,1].
@@ -151,9 +167,13 @@ return [3,2,1].
 给出一棵二叉树 {1,#,2,3},
 
    1
+
     \
+
      2
+
     /
+
    3
    
 返回 [3,2,1]
@@ -193,9 +213,13 @@ Example
 Given binary tree {3,9,20,#,#,15,7},
 
     3
+
    / \
+
   9  20
+
     /  \
+
    15   7
 
 return its level order traversal as:
@@ -214,11 +238,15 @@ return its level order traversal as:
 
 给一棵二叉树 {3,9,20,#,#,15,7} ：
 
-  3
- / \
-9  20
-  /  \
- 15   7
+    3
+
+   / \
+
+  9  20
+
+    /  \
+    
+   15   7
  
 返回它的分层遍历结果：
 
