@@ -4,7 +4,7 @@ title: 关于这个博客
 date: 2017-2-15
 categories: blog
 description: 关于博主创立该博客来由的说明
-tags: [说明,随笔]
+tags: [说明]
 ---
 ----------
 

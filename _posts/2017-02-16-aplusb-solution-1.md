@@ -3,7 +3,7 @@ layout: post
 title: lintcode “A + B” 题解
 date: 2017-02-16
 categories: blog
-tags: [算法,数据结构,lintcode题解(python)]
+tags: [lintcode题解(python)]
 ---
 
 #题目 A + B Problem：
