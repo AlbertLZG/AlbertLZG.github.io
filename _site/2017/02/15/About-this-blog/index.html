@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-    <title>lintcode “A + B” 题解 - Albert_LZG's Blog</title>
+    <title>关于这个博客 - Albert_LZG's Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/blog/2017/02/16/aplusb-solution-1/">
+    <link rel="canonical" href="http://localhost:4000/2017/02/15/About-this-blog/">
 
     <!-- Icons -->
   <link rel="shortcut icon" href="img/blog_logo1.ico">
@@ -99,16 +99,12 @@
                 <div class="post-heading">
                     <div class="Tags">
                         
-                        <a class="tag" href="/Tags/#算法" title="算法">算法</a>
-                        
-                        <a class="tag" href="/Tags/#数据结构" title="数据结构">数据结构</a>
-                        
-                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
+                        <a class="tag" href="/Tags/#说明" title="说明">说明</a>
                         
                     </div>
-                    <h1>lintcode “A + B” 题解</h1>
+                    <h1>关于这个博客</h1>
                     
-                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
+                    <span class="meta">Posted by Albert_LZG on February 15, 2017</span>
                 </div>
             </div>
         </div>
@@ -124,187 +120,35 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-                <p>#题目 A + B Problem：</p>
+                <hr />
 
-<p>Write a function that add two numbers A and B. You should not use + or any arithmetic operators.</p>
+<p>#关于为什么想要开自己的博客？</p>
 
-<p>Notice:
-There is no need to read data from standard input stream. Both parameters are given in function aplusb, you job is to calculate the sum and return it.</p>
+<p>博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客
+网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网
+站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：</p>
 
-<p>Clarification:</p>
+<p>其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在
+CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢
+的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Are a and b both 32-bit integers?    
-——Yes.
-Can I use bit operation?    
-——Sure you can.
-</code></pre>
-</div>
+<p>其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。</p>
 
-<p>Example:
-Given a=1 and b=2 return 3</p>
+<p>其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。</p>
 
-<p>#题目 A + B 问题：</p>
+<p>由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。</p>
 
-<p>给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。</p>
+<p>##在此立下Flag：</p>
 
-<p>注意事项
-你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。</p>
+<p>为督促自己每日的学习，在此立下Flag：</p>
 
-<p>说明：</p>
+<p>###一、按时将学到的数据结构与算法方法的知识更新到博客</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>a和b都是 32位 整数么？
-——是的
-我可以使用位运算符么？
-——当然可以
-</code></pre>
-</div>
+<p>###二、按时将OJ网站上刷的题更新到博客</p>
 
-<p>样例：
-如果 a=1 并且 b=2，返回3</p>
+<p>###三、按时将读到的最新paper及自己的看法更新到博客</p>
 
-<p>##思路：</p>
-
-<p>首先，题中给定，所有数均为32位大小。</p>
-
-<p>当不考虑进位时，加法可以用位运算“按位异或^”代替：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1 + 1 = 1 ^ 1 = 0
-1 + 0 = 1 ^ 0 = 1
-0 + 1 = 0 ^ 1 = 1
-0 + 0 = 0 ^ 0 = 0
-</code></pre>
-</div>
-
-<p>而进位可以用位运算“按位与&amp;”获取：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>0 + 0 = 0 &amp; 0 = 0 = 不进位
-1 + 0 = 1 &amp; 0 = 0 = 不进位
-0 + 1 = 0 &amp; 1 = 0 = 不进位
-1 + 1 = 1 &amp; 1 = 1 = 进位
-</code></pre>
-</div>
-
-<p>如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&amp;y)«1
-（注：需要左移一位表示每一位产生的进位是与高一位的数字相加的）
-因此，有：</p>
-<ol>
-  <li>x^y //执行加法</li>
-  <li>
-    <p>(x&amp;y)«1 //进位操作
-最后，我们有：x+y = x^y+(x&amp;y)«1</p>
-
-    <p>证明：x^y是不考虑进位时加法结果。当二进制位同时为1时，才    有进位，因此(x&amp;y)«1进位产生的值，称为进位补偿。将两者相    加便是完整加法结果。</p>
-  </li>
-</ol>
-
-<p>由于 x^y+(x&amp;y)«1 也可以表示为(x^y)^((x&amp;y)«1)与(x^y)&amp;((x&amp;y)«1)«1之和，因此可以迭代地使用1式和2式来将不考虑进位的加法结果与进位产生的加数相加，直到进位为0时，得到的不考虑进位的加法结果（即1式结果）即为最终结果。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>下面是两位数的加法：
-11+01 = 100  // 原始的加法
-// 位运算分别计算1）和2）
-1）11 ^ 01 = 10
-2）(11 &amp; 01) &lt;&lt; 1 = 10
-//用普通的加法去运算可以得到 10 + 10 = 100
-//但是由于不允许使用“+”，所以要让两个数再按前面的方法计算：
-1) 10 ^ 10 = 00
-2) (10 &amp; 10) &lt;&lt; 1 = 100
-再次迭代：
-1) 00 ^ 100 = 100
-2) (00 &amp; 100）&lt;&lt; 1 = 0
-此时进位为0，式1)结果即为最终结果
-</code></pre>
-</div>
-
-<p>代码：</p>
-
-<p>####python：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
-    """
-    @param a: The first integer
-    @param b: The second integer
-    @return:  The sum of a and b
-    """
-    def aplusb(self, a, b):
-        # write your code here, try to do it without arithmetic operators.
-        import ctypes
-        a = ctypes.c_int32(a).value
-        b = ctypes.c_int32(b).value
-        while b != 0:
-            carry = ctypes.c_int32(a &amp; b).value
-            a = ctypes.c_int32(a ^ b).value
-            b = ctypes.c_int32(carry &lt;&lt; 1).value
-        return a
-</code></pre>
-</div>
-<p>####c：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1 int bitAdd(int a,int b)
-2 {
-3     if(b==0)
-4         return a;
-5     int sum = a^b;
-6     int carry =(a&amp;b)&lt;&lt;1;
-7     return bitAdd(sum,carry);
-8 }
-</code></pre>
-</div>
-
-<p>####c++:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        int i = 0;
-        int res = 0;
-        int carry = 0;
-        for (; i&lt;32; i++) {
-            int aa = (a &gt;&gt; i) &amp; 1;
-            int bb = (b &gt;&gt; i) &amp; 1;
-            res |= (aa ^ bb ^ carry) &lt;&lt; i;
-            if (aa == 1 &amp;&amp; bb == 1 || ((aa ==1 || bb == 1) &amp;&amp; carry == 1)) {
-                carry = 1;
-            }
-            else carry = 0;
-        }
-        return res;
-    }
-};
-</code></pre>
-</div>
-
-<p>或者</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        while(b != 0){
-            int carry = a &amp; b;
-            a = a ^ b;
-            b = carry &lt;&lt; 1;
-        }
-        return a;
-    }
-}
-
-public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        if (b == 0) return a;
-        int sum = a^b;
-        int carry = (a&amp;b)&lt;&lt;1;
-        return aplusb(sum, carry);
-    }
-</code></pre>
-</div>
+<p>以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。</p>
 
 <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
 
@@ -314,13 +158,9 @@ public int aplusb(int a, int b) {
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/blog/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/blog/2017/02/16/trailingZeros-solution-2/" data-toggle="tooltip" data-placement="top" title="lintcode “尾部的零” 题解">Next Post &rarr;</a>
+                        <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

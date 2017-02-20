@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-    <title>lintcode “丑数 II” 题解 - Albert_LZG's Blog</title>
+    <title>lintcode “尾部的零” 题解 - Albert_LZG's Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/blog/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">
+    <link rel="canonical" href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">
 
     <!-- Icons -->
   <link rel="shortcut icon" href="img/blog_logo1.ico">
@@ -99,16 +99,12 @@
                 <div class="post-heading">
                     <div class="Tags">
                         
-                        <a class="tag" href="/Tags/#算法" title="算法">算法</a>
-                        
-                        <a class="tag" href="/Tags/#数据结构" title="数据结构">数据结构</a>
-                        
                         <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
                         
                     </div>
-                    <h1>lintcode “丑数 II” 题解</h1>
+                    <h1>lintcode “尾部的零” 题解</h1>
                     
-                    <span class="meta">Posted by Albert_LZG on February 15, 2017</span>
+                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
                 </div>
             </div>
         </div>
@@ -124,208 +120,81 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-                <p>#题目Ugly Number II：</p>
+                <p>#题目 “Trailing Zeros” Problem:</p>
 
-<p>Ugly number is a number that only have factors 2, 3 and 5.
-Design an algorithm to find the nth ugly number. The first 10 ugly numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</p>
+<p>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
 
-<p>Notice：
-Note that 1 is typically treated as an ugly number.</p>
-
-<p>Example：
-If n=9, return 10.</p>
+<p>Example
+11! = 39916800, so the out should be 2</p>
 
 <p>Challenge 
-O(n log n) or O(n) time.</p>
+O(log N) time</p>
 
-<p>#丑数 II</p>
+<p>#题目 “尾部的零”问题:</p>
 
-<p>设计一个算法，找出只含素因子2，3，5 的第 n 大的数。
-符合条件的数如：1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</p>
+<p>设计一个算法，计算出n阶乘中尾部零的个数</p>
 
-<p>注意事项：
-我们可以认为1也是一个丑数</p>
+<p>样例
+11! = 39916800，因此应该返回 2</p>
 
-<p>样例：
-如果n = 9， 返回 10</p>
+<p>挑战 
+O(logN)的时间复杂度</p>
 
-<p>挑战：
-O(n log n) 或者 O(n) 时间复杂度.</p>
+<p>##思路：</p>
 
-<p>##题解：</p>
+<p>考虑将N! = 1 × 2 ×３× 4 ×……×N中的每一个因数进行质因数分解，结果为：1 × 2 × 3 × (2 × 2) × 5 × (2 × 3) × 7 × (2 × 2 ×2) ×……</p>
 
-<p>由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举是不行的。比如下面：</p>
+<p>10进制数结尾的每一个0都表示有一个因数10存在（同理，对于一个M进制的数，让结尾多一个0就等价于乘以M）。10可以分解为2 × 5（只有质数2和5相乘能产生0，别的任何两个质数相乘都不能产生0），而每一个2和5相乘只产生一个0。</p>
 
-<pre><code class="language-c++:">class Solution {  
-public:  
-    /* 
-     * @param n an integer 
-     * @return the nth prime number as description. 
-     */  
-    int nthUglyNumber(int n) {  
-        // write your code here  
-        int countN = 0;  
-        int m = 0;  
-        int lastNumber = 2;  
-        while(countN &lt; n)  
-        {  
-            m++;  
-            int number = m;  
-            while(number % 2 == 0)  
-                number = number / 2;  
-            while(number % 3 == 0)  
-                number = number / 3;  
-            while(number % 5 == 0)  
-                number = number / 5;  
-            if(number == 1)  
-            {  
-                countN++;  
-            }  
-        }  
-        return m;  
-    }  
-};
-</code></pre>
-<p>###思路：</p>
+<p>所以，分解后的整个因数式中有多少对(2, 5)，结果中就有多少个0，而分解的结果中，2的个数显然是多于5的每一个偶数都包含至少一个2），因此，有多少个5，就有多少个(2, 5)对。</p>
 
-<p>由丑数的定义可知，任何一个丑数都是2^i*3^j*5^k这种形式的，并且任意一个丑数乘以2、3、5后均可以得到新的丑数。</p>
+<p>n的阶乘的质因数分解式中5的个数可以用如下方法求：</p>
 
-<ul>
-  <li>
-    <p>第一个丑数ugly[0]为1，此时i = j = k = 0。</p>
-  </li>
-  <li>
-    <p>求解第二个丑数：
-ugly[1] = min(ugly[0]*2, ugly[0]*3, ugly[0]*5) = min(1*2, 1*3, 1*5) = 2 = 2^1*3^0*5^0
-即此时的i = 1。</p>
-  </li>
-  <li>
-    <p>求解第三个丑数：
-ugly[2] = min(ugly[1]*2, ugly[0]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^1*5^0
-即此时的j = 1</p>
-
-    <p>####思考:</p>
-  </li>
-</ul>
-
-<ol>
-  <li>
-    <p>为什么这里要用2前面的乘数是ugly[1]而不是ugly[0]?</p>
-
-    <p>因为ugly[0]*2已经作为第二个丑数赋值给了ugly[1]。</p>
-  </li>
-  <li>
-    <p>为什么这三个数的最小值就是还没有添加到丑数序列中的所有丑数的最小值？</p>
-
-    <p>因为任意一个丑数乘以2、3、5后均可以得到新的丑数，同时，任意一个丑数都可以由前面的某一丑数乘以2、3或者5得到，除了第一个丑数1。因此还没有添加进丑数序列的丑数有：</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> ugly[0]*2*2, ugly[0]*2*2*2, ……（ugly[0]*2作为已经赋给ugly[1]了）
- ugly[1]*2, ugly[1]*2*2,……（注意ugly[1]*2 = ugly[0]*2*2，…… ）
- ugly[2]*2, ugly[2]*2*2,……
- …… …… …… ……
- ugly[n]*2, ugly[n]*2*2,……
-</code></pre>
-    </div>
-
-    <p>上面丑数序列里最小的数是ugly[1]*2。</p>
-
-    <p>同理，</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> ugly[0]*3, ugly[0]*3*3,……
- ugly[1]*3,……
- ……  最小的数是ugly[0]*3
-
- ugly[0]*5, ugly[0]*5*5,……
- ugly[1]*5,……
- ……  里面最小的数是ugly[0]*5
-</code></pre>
-    </div>
-
-    <p>因此只需要比较ugly[1]<em>2, ugly[0]</em>3, ugly[0]*5三个数，将其中的最小值作为下一个要添加的丑数即可。</p>
-  </li>
-  <li>
-    <p>为什么这里要用3和5前面的乘数是ugly[0]而不是ugly[1]?</p>
-
-    <p>因为ugly[1]&gt;ugly[0],而ugly[0]<em>3和ugly[0]</em>5均是还没有添加进丑数序列的丑数，它们都分别比ugly[1]<em>3和ugly[1]</em>5小。</p>
-  </li>
-  <li>
-    <p>那2、3、5前面的乘数应该等于多少？</p>
-
-    <p>初始时设置索引变量index2=index3=index5=0分别代表相应乘数前面的数字是哪个丑数，即ugly[index2],ugly[index3],ugly[index5]。每当ugly[index2]*2被添加进丑数序列中时，令index2增加一，否则保持不变。3和5同理。下面用该方法求第四个丑数：)</p>
-  </li>
-</ol>
-
-<ul>
-  <li>
-    <p>求解第四个丑数：</p>
-
-    <p>ugly[2] = min(ugly[1]*2, ugly[1]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^1*5^0</p>
-
-    <p>初始化令index2=index3=index5=0；
-  求第二个丑数得到ugly[index2]*2=ugly[0]*2=2，因此index2从0增加到1；
-  求第三个丑数时得ugly[index3]*3=ugly[0]*3=3，因此index3从0增加到1；
-  求第四个丑数时index2=1，index3=1，index5=0，因此比较ugly[1]*2, ugly[1]*3, ugly[0]*5三个数，得ugly[1]*2是其中最小值，这时令index2从1增加到2。</p>
-  </li>
-</ul>
-
-<p>##代码：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>注意：代码需要考虑有重数问题，即当ugly[index2]\*2, ugly[index3]\*3, ugly[index5]\*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]\*2 = ugly[index3]\*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]\*3也被添加进去了。下面两段代码均有考虑该情况。
+<div class="highlighter-rouge"><pre class="highlight"><code>1000的阶乘末尾0的个数:
+（下面的“／”代表“取整除法”）
+1000/5 + 1000/25 + 1000/125 + 1000/625 
+= 200 + 40 + 8 + 1 
+= 249(个)
 </code></pre>
 </div>
 
-<p>####python：</p>
+<p>例子：求26的阶乘的尾部有多少个0. 
+26！ = 1 × 2 ×３× 4 × <strong>5</strong> × 6 × 7 × 8 × 9 × <strong>10</strong> × 11 × 12 × 13× 14 × <strong>15</strong> × 16 × 17 × 18 × 19 × <strong>20</strong> × 21 × 22 ×2３× 24 × <strong><em>25</em></strong> × 26 
+其中<strong>5</strong>、<strong>10</strong>、<strong>15</strong>、<strong>20</strong>各包含一个5，<strong><em>25</em></strong>包含两个5，共有 26/5 + 26/25 = 6（个）5相乘</p>
+<blockquote>
+  <p>25其实可以分解成2个5相乘，而26/5只计算了一个5，因此还要再加26/25.</p>
+</blockquote>
+
+<p>##代码：
+####python：</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
-    """
-    @param {int} n an integer.
-    @return {int} the nth prime number as description.
-    """
-    def nthUglyNumber(self, n):
-        # write your code here
-        ugly = [1]
-        index2 = 0
-        index3 = 0
-        index5 = 0
-        for i in range(n):
-            temp_ugly = min(ugly[index2]*2,ugly[index3]*3,ugly[index5]*5)
-            ugly.append(temp_ugly)
-            index2 +=1 if temp_ugly &gt;= ugly[index2]*2 else 0
-            index3 +=1 if temp_ugly &gt;= ugly[index3]*3 else 0
-            index5 +=1 if temp_ugly &gt;= ugly[index5]*5 else 0
-        return ugly[n-1]
+    # @param n a integer
+    # @return ans a integer
+    def trailingZeros(self, n):
+        zeros = 0
+        while n &gt; 0:
+            zeros += n / 5
+            n /= 5
+        return zeros
 </code></pre>
 </div>
 
-<p>####c++：</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {  
-public:  
-    /* 
-     * @param n an integer 
-     * @return the nth prime number as description. 
-     */  
-    int nthUglyNumber(int n) {  
-        // write your code here  
-        int *ugly = new int[n];  
-        ugly[0] = 1;  
-        int num_2 = 0;  
-        int num_3 = 0;  
-        int num_5 = 0;  
-        for(int i = 1;i&lt;n;i++)  
-        {  
-            ugly[i] = min(min(ugly[num_2]*2,ugly[num_3]*3),ugly[num_5]*5);  
-            if(ugly[i] / ugly[num_2] == 2)  
-                num_2 ++;  
-            if(ugly[i] / ugly[num_3] == 3)  
-                num_3 ++;  
-            if(ugly[i] / ugly[num_5] == 5)  
-                num_5 ++;  
-        }  
-        return ugly[n-1];  
-    }  
+<p>####java：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
+    /*
+     * param n: As desciption
+     * return: An integer, denote the number of trailing zeros in n!
+     */
+    public long trailingZeros(long n) {
+        long count = 0;
+        for(int i = 1; Math.pow(5,i) &lt;= n; i++) {
+            count += n / (long)Math.pow(5,i);//注意强制类型转换
+        }
+        return count;
+    }
 };
 </code></pre>
 </div>
-
 <p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
 
 
@@ -335,12 +204,12 @@ public:
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/blog/2017/02/15/About-this-blog/" data-toggle="tooltip" data-placement="top" title="关于这个博客">&larr; Previous Post</a>
+                        <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/blog/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">Next Post &rarr;</a>
+                        <a href="/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="排序算法">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
