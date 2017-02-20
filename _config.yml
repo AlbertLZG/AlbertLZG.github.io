@@ -26,11 +26,29 @@ zhihu_username:
 # Build settings  
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
+# markdown: kramdown
+# highlighter: rouge
+# permalink: pretty
+# paginate: 8
+# exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 markdown: kramdown
+kramdown:
+    input: GFM
 highlighter: rouge
-permalink: pretty
 paginate: 8
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+gems:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: Asia/Shanghai
