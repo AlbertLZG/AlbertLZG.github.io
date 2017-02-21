@@ -6,7 +6,7 @@ categories: blog
 tags: [lintcode题解(python)]
 ---
 
-#题目 A + B Problem：
+# 题目 A + B Problem：
 
 Write a function that add two numbers A and B. You should not use + or any arithmetic operators.
 
@@ -23,7 +23,7 @@ Clarification:
 Example:
 Given a=1 and b=2 return 3
 
-#题目 A + B 问题：
+# 题目 A + B 问题：
 
 给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
 
@@ -40,7 +40,7 @@ Given a=1 and b=2 return 3
 样例：
 如果 a=1 并且 b=2，返回3
 
-##思路：
+## 思路：
 
 首先，题中给定，所有数均为32位大小。
 
@@ -85,7 +85,7 @@ Given a=1 and b=2 return 3
 
 代码：
 
-####python：
+#### python：
 
 ```
 class Solution:
@@ -105,7 +105,7 @@ class Solution:
             b = ctypes.c_int32(carry << 1).value
         return a
 ```
-####c：
+#### c：
 
 ```
 1 int bitAdd(int a,int b)
@@ -118,7 +118,7 @@ class Solution:
 8 }
 ```
 
-####c++:
+#### c++:
 
 ```
 class Solution {

@@ -1,19 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!--
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
+<!--     <title>关于这个博客 &mdash; Albert_LZG's Blog</title> -->
     <title>关于这个博客 - Albert_LZG's Blog</title>
 
+    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="/assets/css/components/collection.css">
+    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="/assets/css/globals/common.css">
+    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+<!--      -->
+    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/15/About-this-blog/"> -->
     <link rel="canonical" href="http://localhost:4000/2017/02/15/About-this-blog/">
 
+    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
+
+<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
     <!-- Icons -->
-  <link rel="shortcut icon" href="img/blog_logo1.ico">
+    <link rel="shortcut icon" href="img/blog_logo1.ico">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -29,14 +49,420 @@
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!--     
+    <meta property="og:title" content="关于这个博客">
+      
+    <meta name="keywords" content="">
+    <meta name="og:keywords" content="">
+       -->
+<!--     <meta name="description" content="关于为什么想要开自己的博客？博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。在此立下Flag：为督促自己每日的学习，在此立下Flag：一、按时将学到的数据结构与算法方法的知识更新到博客二、按时将OJ网站上刷的题更新到博客三、按时将读到的最新paper及自己的看法更新到博客以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。"> -->
+<!--     <meta name="description" content="李志刚|读书·编程·思">
 
+    <meta name="og:description" content="关于为什么想要开自己的博客？博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。在此立下Flag：为督促自己每日的学习，在此立下Flag：一、按时将学到的数据结构与算法方法的知识更新到博客二、按时将OJ网站上刷的题更新到博客三、按时将读到的最新paper及自己的看法更新到博客以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。">
+      
+
+    
+
+    
+        
+    
+
+    <meta property="og:url" content="http://localhost:4000/2017/02/15/About-this-blog/">
+    <meta property="og:site_name" content="Albert_LZG's Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+
+    
+    <meta property="article:published_time" content="2017-02-15">
+     -->
+
+<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/js/jquery-ui.js"></script>
+    <script type="text/javascript">
+
+    function toggleMenu() {
+        var nav = document.getElementsByClassName("site-header-nav")[0];
+        if (nav.style.display == "inline-flex") {
+          nav.style.display = "none";
+        } else {
+          nav.style.display = "inline-flex";
+        }
+    }
+    </script> -->
 </head>
+
+<!-- <body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+            </nav>
+        </div>
+    </header> -->
+    <!-- / header -->
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/orange.jpg')
+    }
+</style>
+
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="Tags">
+                        
+                        <a class="tag" href="/Tags/#说明" title="说明">说明</a>
+                        
+                    </div>
+                    <h1>关于这个博客</h1>
+                    
+                    <span class="meta">Posted by Albert_LZG on February 15, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
+<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
+
+<div id="back-top">
+  <a href="#top" title="回到顶部"></a>
+</div>
+
+<!--
+<section class="collection-head small geopattern" data-pattern-id="关于这个博客">
+<div class="container">
+  <div class="columns">
+    <div class="column three-fourths">
+      <div class="collection-title">
+
+        <h1 class="collection-header">关于这个博客</h1>
+        <div class="collection-info">
+          
+          <span class="meta-info">
+            <span class="octicon octicon-calendar"></span> 2017/02/15
+          </span>
+          
+          
+          
+          <span class="meta-info">
+            <span class="octicon octicon-file-directory"></span>
+            <a href="/categories/#blog" title="blog">blog</a>
+          </span>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+-->
+
+
+
+<!-- / .banner -->
+
+<section class="container content">
+
+
+      <div class="columns">
+      <!--
+        <div class="column three-fourths" >
+      -->
+        <div class="column four-fifths" >
+          <!--article class="article-content markdown-body"-->
+
+          <article>
+            <div class="container">
+              <!--
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+              -->
+                  <hr />
+
+<h1 id="关于为什么想要开自己的博客">关于为什么想要开自己的博客？</h1>
+
+<p>博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客
+网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网
+站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：</p>
+
+<p>其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在
+CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢
+的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。</p>
+
+<p>其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。</p>
+
+<p>其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。</p>
+
+<p>由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。</p>
+
+<h2 id="在此立下flag">在此立下Flag：</h2>
+
+<p>为督促自己每日的学习，在此立下Flag：</p>
+
+<h3 id="一按时将学到的数据结构与算法方法的知识更新到博客">一、按时将学到的数据结构与算法方法的知识更新到博客</h3>
+
+<h3 id="二按时将oj网站上刷的题更新到博客">二、按时将OJ网站上刷的题更新到博客</h3>
+
+<h3 id="三按时将读到的最新paper及自己的看法更新到博客">三、按时将读到的最新paper及自己的看法更新到博客</h3>
+
+<p>以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。</p>
+
+<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
+
+
+
+                  <hr>
+
+                  <ul class="pager">
+                      
+                      
+                      <li class="next">
+                          <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul>
+
+                      
+                        
+    <script>
+    var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
+    var idcomments_post_id;
+    var idcomments_post_url;
+    </script>
+    <span id="IDCommentsPostTitle" style="display:none"></span>
+    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+                      
+              <!--
+                </div>
+            </div>
+            -->
+          </div>
+          <!--
+          
+
+          -->
+          </article>
+
+          <!--div class="share">
+            <div class="share-component"></div>
+          </div>
+          <div class="comment">
+            
+  
+
+
+          </div-->
+        </div>
+        <!--
+        <div class="column one-fourth">
+        -->
+        <div class="column one-fifth">
+          
+<h3>Search</h3>
+<div id="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+
+          
+<h3 class="mobile-hidden">Post Directory</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="/assets/js/jquery.toc.js"></script>
+
+        </div>
+      </div>
+
+</section>
+
+<!-- /section.content -->
+
+
+
+
+
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2015
+                    <span title=""></span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <!-- / footer -->
+    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="/assets/js/geopattern.js"></script>
+    <script src="/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+    
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="李志刚|读书·编程·思">
+
+<!--     <title>关于这个博客 &mdash; Albert_LZG's Blog</title> -->
+    <title>关于这个博客 - Albert_LZG's Blog</title>
+
+    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="/assets/css/components/collection.css">
+    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="/assets/css/globals/common.css">
+    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+<!--      -->
+    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/15/About-this-blog/"> -->
+    <link rel="canonical" href="http://localhost:4000/2017/02/15/About-this-blog/">
+
+    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
+
+<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
+    <!-- Icons -->
+    <link rel="shortcut icon" href="img/blog_logo1.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!--     
+    <meta property="og:title" content="关于这个博客">
+      
+    <meta name="keywords" content="">
+    <meta name="og:keywords" content="">
+       -->
+<!--     <meta name="description" content="关于为什么想要开自己的博客？博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。在此立下Flag：为督促自己每日的学习，在此立下Flag：一、按时将学到的数据结构与算法方法的知识更新到博客二、按时将OJ网站上刷的题更新到博客三、按时将读到的最新paper及自己的看法更新到博客以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。"> -->
+<!--     <meta name="description" content="李志刚|读书·编程·思">
+
+    <meta name="og:description" content="关于为什么想要开自己的博客？博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下：其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。在此立下Flag：为督促自己每日的学习，在此立下Flag：一、按时将学到的数据结构与算法方法的知识更新到博客二、按时将OJ网站上刷的题更新到博客三、按时将读到的最新paper及自己的看法更新到博客以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。">
+      
+
+    
+
+    
+        
+    
+
+    <meta property="og:url" content="http://localhost:4000/2017/02/15/About-this-blog/">
+    <meta property="og:site_name" content="Albert_LZG's Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+
+    
+    <meta property="article:published_time" content="2017-02-15">
+     -->
+
+<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/js/jquery-ui.js"></script>
+    <script type="text/javascript">
+
+    function toggleMenu() {
+        var nav = document.getElementsByClassName("site-header-nav")[0];
+        if (nav.style.display == "inline-flex") {
+          nav.style.display = "none";
+        } else {
+          nav.style.display = "inline-flex";
+        }
+    }
+    </script> -->
+</head>
+
+<!-- <body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+            </nav>
+        </div>
+    </header> -->
+    <!-- / header -->
 
 
 
@@ -67,6 +493,14 @@
                 </li>
                 
                 <li>
+                    <a href="/404.html">页面没有找到</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
                     <a href="/about/">About</a>
                 </li>
                 
@@ -75,7 +509,23 @@
                 </li>
                 
                 <li>
+                    <a href="/categories/">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/links/">Links</a>
+                </li>
+                
+                <li>
+                    <a href="/open-source/">Open Source Projects</a>
+                </li>
+                
+                <li>
                     <a href="/tags/">repository</a>
+                </li>
+                
+                <li>
+                    <a href="/wiki/">Wiki</a>
                 </li>
                 
             </ul>
@@ -92,6 +542,8 @@
         background-image: url('/img/orange.jpg')
     }
 </style>
+
+
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -112,17 +564,67 @@
 </header>
 
 
+<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
+<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
+
+<div id="back-top">
+  <a href="#top" title="回到顶部"></a>
+</div>
+
+<!--
+<section class="collection-head small geopattern" data-pattern-id="关于这个博客">
+<div class="container">
+  <div class="columns">
+    <div class="column three-fourths">
+      <div class="collection-title">
+
+        <h1 class="collection-header">关于这个博客</h1>
+        <div class="collection-info">
+          
+          <span class="meta-info">
+            <span class="octicon octicon-calendar"></span> 2017/02/15
+          </span>
+          
+          
+          
+          <span class="meta-info">
+            <span class="octicon octicon-file-directory"></span>
+            <a href="/categories/#blog" title="blog">blog</a>
+          </span>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+-->
 
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-                <hr />
+<!-- / .banner -->
 
-<p>#关于为什么想要开自己的博客？</p>
+<section class="container content">
+
+
+      <div class="columns">
+      <!--
+        <div class="column three-fourths" >
+      -->
+        <div class="column four-fifths" >
+          <!--article class="article-content markdown-body"-->
+
+          <article>
+            <div class="container">
+              <!--
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+              -->
+                  <hr />
+
+<h1 id="关于为什么想要开自己的博客">关于为什么想要开自己的博客？</h1>
 
 <p>博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客
 网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网
@@ -138,15 +640,15 @@ CSND、博客园等技术博客网站上面都申请账号，收藏、转载自�
 
 <p>由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。</p>
 
-<p>##在此立下Flag：</p>
+<h2 id="在此立下flag">在此立下Flag：</h2>
 
 <p>为督促自己每日的学习，在此立下Flag：</p>
 
-<p>###一、按时将学到的数据结构与算法方法的知识更新到博客</p>
+<h3 id="一按时将学到的数据结构与算法方法的知识更新到博客">一、按时将学到的数据结构与算法方法的知识更新到博客</h3>
 
-<p>###二、按时将OJ网站上刷的题更新到博客</p>
+<h3 id="二按时将oj网站上刷的题更新到博客">二、按时将OJ网站上刷的题更新到博客</h3>
 
-<p>###三、按时将读到的最新paper及自己的看法更新到博客</p>
+<h3 id="三按时将读到的最新paper及自己的看法更新到博客">三、按时将读到的最新paper及自己的看法更新到博客</h3>
 
 <p>以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。</p>
 
@@ -154,18 +656,18 @@ CSND、博客园等技术博客网站上面都申请账号，收藏、转载自�
 
 
 
-                <hr>
+                  <hr>
 
-                <ul class="pager">
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
+                  <ul class="pager">
+                      
+                      
+                      <li class="next">
+                          <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul>
 
-                    
+                      
                         
     <script>
     var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
@@ -175,117 +677,110 @@ CSND、博客园等技术博客网站上面都申请账号，收藏、转载自�
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
-                    
+                      
+              <!--
+                </div>
             </div>
+            -->
+          </div>
+          <!--
+          
+
+          -->
+          </article>
+
+          <!--div class="share">
+            <div class="share-component"></div>
+          </div>
+          <div class="comment">
+            
+  
+
+
+          </div-->
         </div>
-    </div>
-</article>
+        <!--
+        <div class="column one-fourth">
+        -->
+        <div class="column one-fifth">
+          
+<h3>Search</h3>
+<div id="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
 
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
+          
+<h3 class="mobile-hidden">Post Directory</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
 
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
+<script src="/assets/js/jquery.toc.js"></script>
+
+        </div>
+      </div>
+
+</section>
+
+<!-- /section.content -->
 
 
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <!-- kill the Facebook and Weibo -->
-                    <li>
-                        <a href="/feed.xml">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
 
-                    
-                    <li>
-                        <a href="https://github.com/AlbertLZG">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <!--
-                    
-                    -->
 
-                    <!--
-                    
-                    -->
 
-                    
-                    <!--
-                    
-                    -->
 
-                </ul>
-                <p class="copyright text-muted">
-                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
-                </p>
+        <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2015
+                    <span title=""></span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
             </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
         </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
-
-
-
-<!-- Highlight.js -->
-<script>
-    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
-        hljs.initHighlightingOnLoad();
-    })
-</script>
-<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+    </footer>
+    <!-- / footer -->
+    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="/assets/js/geopattern.js"></script>
+    <script src="/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+    
+</body>
+</html>
 
 
 </body>

@@ -6,7 +6,7 @@ categories: blog
 tags: [lintcode题解(python)]
 ---
 
-#题目 "Trailing Zeros" Problem:
+# 题目 "Trailing Zeros" Problem:
 
 Write an algorithm which computes the number of trailing zeros in n factorial.
 
@@ -17,7 +17,7 @@ Challenge
 O(log N) time
 
 
-#题目 "尾部的零"问题:
+# 题目 "尾部的零"问题:
 
 设计一个算法，计算出n阶乘中尾部零的个数
 
@@ -28,7 +28,7 @@ O(log N) time
 O(logN)的时间复杂度
  
 
-##思路：
+## 思路：
 
 考虑将N! = 1 × 2 ×３× 4 ×……×N中的每一个因数进行质因数分解，结果为：1 × 2 × 3 × (2 × 2) × 5 × (2 × 3) × 7 × (2 × 2 ×2) ×…… 
 
@@ -49,8 +49,8 @@ n的阶乘的质因数分解式中5的个数可以用如下方法求：
 其中**5**、**10**、**15**、**20**各包含一个5，***25***包含两个5，共有 26/5 + 26/25 = 6（个）5相乘 
 >25其实可以分解成2个5相乘，而26/5只计算了一个5，因此还要再加26/25.
 
-##代码：
-####python：
+## 代码：
+#### python：
 ```
 class Solution:
     # @param n a integer
@@ -63,7 +63,7 @@ class Solution:
         return zeros
 ```
 
-####java：
+#### java：
 ```
 class Solution {
     /*

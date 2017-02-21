@@ -6,7 +6,7 @@ categories: blog
 tags: [lintcode题解(python)]
 ---
 
-#题目 Binary Tree Preorder Traversal
+# 题目 Binary Tree Preorder Traversal
 
 Given a binary tree, return the preorder traversal of its nodes' values.
 
@@ -21,7 +21,7 @@ Given:
 
 return [1,2,4,5,3].
 
-#二叉树的前序遍历
+# 二叉树的前序遍历
 
 给出一棵二叉树，返回其节点值的前序遍历。
 
@@ -37,9 +37,11 @@ return [1,2,4,5,3].
  返回 [1,2,3].
 
 
-##题解：
+## 题解：
 
-递归：
+思路：递归。
+
+#### Python：
 
 ```Python:
 """
@@ -66,7 +68,7 @@ class Solution:
             self.preorderTraversal(root.right)
         return self.res
 ```
-#Binary Tree Inorder Traversal
+# Binary Tree Inorder Traversal
 
 Given a binary tree, return the inorder traversal of its nodes' values.
 
@@ -83,7 +85,7 @@ Given binary tree {1,#,2,3},
 return [1,3,2].
 
 
-#二叉树的中序遍历
+# 二叉树的中序遍历
 
 给出一棵二叉树,返回其中序遍历
 
@@ -98,6 +100,8 @@ return [1,3,2].
     3
     
 返回 [1,3,2].
+
+#### Python：
 
 ```Python
 """
@@ -124,7 +128,7 @@ class Solution:
             self.inorderTraversal(root.right)
         return self.res
 ```
-#Binary Tree Postorder Traversal
+# Binary Tree Postorder Traversal
 
 Given a binary tree, return the postorder traversal of its nodes' values.
 
@@ -139,7 +143,7 @@ Given binary tree {1,#,2,3},
     
 return [3,2,1].
 
-#二叉树的后序遍历
+# 二叉树的后序遍历
 
 给出一棵二叉树，返回其节点值的后序遍历。
 
@@ -155,7 +159,8 @@ return [3,2,1].
     
 返回 [3,2,1]
 
-```
+#### Python：
+```Python
 """
 Definition of TreeNode:
 class TreeNode:
@@ -181,7 +186,7 @@ class Solution:
         return self.res
 ```
 
-#Binary Tree Level Order Traversal
+# Binary Tree Level Order Traversal
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
@@ -203,7 +208,7 @@ return its level order traversal as:
   [15,7]
 ]
 
-#二叉树的层次遍历
+# 二叉树的层次遍历
 
 给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）
 
@@ -224,6 +229,8 @@ return its level order traversal as:
   [9,20],
   [15,7]
 ]
+
+#### Python：
 
 ```
 """
