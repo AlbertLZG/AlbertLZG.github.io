@@ -1,605 +1,3 @@
-<!--
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李志刚|读书·编程·思">
-
-<!--     <title>lintcode “二叉树遍历” 题解 &mdash; Albert_LZG's Blog</title> -->
-    <title>lintcode “二叉树遍历” 题解 - Albert_LZG's Blog</title>
-
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/"> -->
-    <link rel="canonical" href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">
-
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
-    <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-<!--     
-    <meta property="og:title" content="lintcode “二叉树遍历” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 Binary Tree Preorder Traversal"> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
-
-    <meta name="og:description" content="题目 Binary Tree Preorder Traversal">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
-</head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
-
-    <!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/orange.jpg')
-    }
-</style>
-
-
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="Tags">
-                        
-                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
-                        
-                    </div>
-                    <h1>lintcode “二叉树遍历” 题解</h1>
-                    
-                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “二叉树遍历">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “二叉树遍历” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
-
-
-
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-binary-tree-preorder-traversal">题目 Binary Tree Preorder Traversal</h1>
-
-<p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
-
-<p>Example
-Given:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    1
-   / \
-  2   3
- / \
-4   5
-</code></pre>
-</div>
-
-<p>return [1,2,4,5,3].</p>
-
-<h1 id="二叉树的前序遍历">二叉树的前序遍历</h1>
-
-<p>给出一棵二叉树，返回其节点值的前序遍历。</p>
-
-<p>样例
-给出一棵二叉树 {1,#,2,3},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1
-\
- 2
-/
-3
-</code></pre>
-</div>
-
-<p>返回 [1,2,3].</p>
-
-<h2 id="题解">题解：</h2>
-
-<p>思路：递归。</p>
-
-<h4 id="python">Python：</h4>
-
-<pre><code class="language-Python:">"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-"""
-
-class Solution:
-    # """
-    # @param root: The root of binary tree.
-    # @return: Preorder in ArrayList which contains node values.
-    # """
-    def __init__(self):
-        self.res = []
-        
-    def preorderTraversal(self, root):
-        # write your code here
-        if root:
-            self.res.append(root.val)
-            self.preorderTraversal(root.left)
-            self.preorderTraversal(root.right)
-        return self.res
-</code></pre>
-<h1 id="binary-tree-inorder-traversal">Binary Tree Inorder Traversal</h1>
-
-<p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
-
-<p>Example
-Given binary tree {1,#,2,3},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1
-\
- 2
-/
-3
-</code></pre>
-</div>
-
-<p>return [1,3,2].</p>
-
-<h1 id="二叉树的中序遍历">二叉树的中序遍历</h1>
-
-<p>给出一棵二叉树,返回其中序遍历</p>
-
-<p>样例</p>
-
-<p>给出二叉树 {1,#,2,3},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1
-\
- 2
-/
-3
-</code></pre>
-</div>
-
-<p>返回 [1,3,2].</p>
-
-<h4 id="python-1">Python：</h4>
-
-<pre><code class="language-Python">"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-"""
-
-
-class Solution:
-    """
-    @param root: The root of binary tree.
-    @return: Inorder in ArrayList which contains node values.
-    """
-    def __init__(self):
-        self.res = [] 
-    def inorderTraversal(self, root):
-        # write your code here
-        if root:
-            self.inorderTraversal(root.left)
-            self.res.append(root.val)
-            self.inorderTraversal(root.right)
-        return self.res
-</code></pre>
-<h1 id="binary-tree-postorder-traversal">Binary Tree Postorder Traversal</h1>
-
-<p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
-
-<p>Example
-Given binary tree {1,#,2,3},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1
-\
- 2
-/
-3
-</code></pre>
-</div>
-
-<p>return [3,2,1].</p>
-
-<h1 id="二叉树的后序遍历">二叉树的后序遍历</h1>
-
-<p>给出一棵二叉树，返回其节点值的后序遍历。</p>
-
-<p>样例</p>
-
-<p>给出一棵二叉树 {1,#,2,3},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1
-\
- 2
-/
-3
-</code></pre>
-</div>
-
-<p>返回 [3,2,1]</p>
-
-<h4 id="python-2">Python：</h4>
-<pre><code class="language-Python">"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-"""
-
-
-class Solution:
-    """
-    @param root: The root of binary tree.
-    @return: Postorder in ArrayList which contains node values.
-    """
-    def __init__(self):
-        self.res = [] 
-    def postorderTraversal(self, root):
-        # write your code here
-        if root:
-            self.postorderTraversal(root.left)
-            self.postorderTraversal(root.right)
-            self.res.append(root.val)
-        return self.res
-</code></pre>
-
-<h1 id="binary-tree-level-order-traversal">Binary Tree Level Order Traversal</h1>
-
-<p>Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).</p>
-
-<p>Have you met this question in a real interview? Yes
-Example
-Given binary tree {3,9,20,#,#,15,7},</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  3
- / \
-9  20
-  /  \
- 15   7
-</code></pre>
-</div>
-
-<p>return its level order traversal as:</p>
-
-<p>[
-  [3],
-  [9,20],
-  [15,7]
-]</p>
-
-<h1 id="二叉树的层次遍历">二叉树的层次遍历</h1>
-
-<p>给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）</p>
-
-<p>样例</p>
-
-<p>给一棵二叉树 {3,9,20,#,#,15,7} ：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  3
- / \
-9  20
-  /  \
- 15   7
-</code></pre>
-</div>
-
-<p>返回它的分层遍历结果：</p>
-
-<p>[
-  [3],
-  [9,20],
-  [15,7]
-]</p>
-
-<h4 id="python-3">Python：</h4>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
-"""
-
-
-class Solution:
-    """
-    @param root: The root of binary tree.
-    @return: Level order in a list of lists of integers
-    """
-    def __init__(self):
-        self.res = []
-        
-    def levelOrder(self, root):
-        # write your code here
-        if not root:
-            return []
-        else:
-            
-            level_now = [root]
-            while level_now:
-                self.res.append([])
-                level_next = []
-                for node in level_now:
-                    self.res[-1].append(node.val)
-                    if node.left:
-                        level_next.append(node.left)
-                    if node.right:
-                        level_next.append(node.right)
-                level_now = level_next
-        return self.res
-</code></pre>
-</div>
-<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
-
-
-
-                  <hr>
-
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
-
-                      
-                        
-    <script>
-    var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
-    var idcomments_post_id;
-    var idcomments_post_url;
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-
-                      
-              <!--
-                </div>
-            </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
-        </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
-
-<script src="/assets/js/jquery.toc.js"></script>
-
-        </div>
-      </div>
-
-</section>
-
-<!-- /section.content -->
-
-
-
-
-
-    <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
-            </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
-        </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -607,37 +5,15 @@ class Solution:
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-<!--     <title>lintcode “二叉树遍历” 题解 &mdash; Albert_LZG's Blog</title> -->
     <title>lintcode “二叉树遍历” 题解 - Albert_LZG's Blog</title>
 
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/"> -->
     <link rel="canonical" href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">
 
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
     <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
+  <link rel="shortcut icon" href="img/blog_logo1.ico">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -653,63 +29,14 @@ class Solution:
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<!--     
-    <meta property="og:title" content="lintcode “二叉树遍历” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 Binary Tree Preorder Traversal"> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <meta name="og:description" content="题目 Binary Tree Preorder Traversal">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
 </head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
 
 
 
@@ -740,14 +67,6 @@ class Solution:
                 </li>
                 
                 <li>
-                    <a href="/404.html">页面没有找到</a>
-                </li>
-                
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-                
-                <li>
                     <a href="/about/">About</a>
                 </li>
                 
@@ -756,23 +75,7 @@ class Solution:
                 </li>
                 
                 <li>
-                    <a href="/categories/">Categories</a>
-                </li>
-                
-                <li>
-                    <a href="/links/">Links</a>
-                </li>
-                
-                <li>
-                    <a href="/open-source/">Open Source Projects</a>
-                </li>
-                
-                <li>
-                    <a href="/tags/">repository</a>
-                </li>
-                
-                <li>
-                    <a href="/wiki/">Wiki</a>
+                    <a href="/repository/">repository</a>
                 </li>
                 
             </ul>
@@ -789,8 +92,6 @@ class Solution:
         background-image: url('/img/orange.jpg')
     }
 </style>
-
-
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -811,65 +112,15 @@ class Solution:
 </header>
 
 
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “二叉树遍历">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “二叉树遍历” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
 
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-binary-tree-preorder-traversal">题目 Binary Tree Preorder Traversal</h1>
+                <h1 id="题目-binary-tree-preorder-traversal">题目 Binary Tree Preorder Traversal</h1>
 
 <p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
 
@@ -1146,22 +397,22 @@ class Solution:
 
 
 
-                  <hr>
+                <hr>
 
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" data-toggle="tooltip" data-placement="top" title="lintcode “丑数 II” 题解">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                      
+                    
                         
     <script>
     var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
@@ -1171,110 +422,117 @@ class Solution:
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
-                      
-              <!--
-                </div>
+                    
             </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
         </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
+    </div>
+</article>
 
 
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
 
-<script src="/assets/js/jquery.toc.js"></script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        </div>
-      </div>
 
-</section>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- kill the Facebook and Weibo -->
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
-<!-- /section.content -->
+                    
+                    <li>
+                        <a href="https://github.com/AlbertLZG">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <!--
+                    
+                    -->
 
+                    <!--
+                    
+                    -->
 
+                    
+                    <!--
+                    
+                    -->
 
-
-
-
-        <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+                </ul>
+                <p class="copyright text-muted">
+                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
+                </p>
             </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
         </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 
 </body>

@@ -1,407 +1,3 @@
-<!--
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李志刚|读书·编程·思">
-
-<!--     <title>lintcode “尾部的零” 题解 &mdash; Albert_LZG's Blog</title> -->
-    <title>lintcode “尾部的零” 题解 - Albert_LZG's Blog</title>
-
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/"> -->
-    <link rel="canonical" href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">
-
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
-    <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-<!--     
-    <meta property="og:title" content="lintcode “尾部的零” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 “Trailing Zeros” Problem:"> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
-
-    <meta name="og:description" content="题目 “Trailing Zeros” Problem:">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
-</head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
-
-    <!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/orange.jpg')
-    }
-</style>
-
-
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="Tags">
-                        
-                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
-                        
-                    </div>
-                    <h1>lintcode “尾部的零” 题解</h1>
-                    
-                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “尾部的零”">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “尾部的零” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
-
-
-
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-trailing-zeros-problem">题目 “Trailing Zeros” Problem:</h1>
-
-<p>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
-
-<p>Example
-11! = 39916800, so the out should be 2</p>
-
-<p>Challenge 
-O(log N) time</p>
-
-<h1 id="题目-尾部的零问题">题目 “尾部的零”问题:</h1>
-
-<p>设计一个算法，计算出n阶乘中尾部零的个数</p>
-
-<p>样例
-11! = 39916800，因此应该返回 2</p>
-
-<p>挑战 
-O(logN)的时间复杂度</p>
-
-<h2 id="思路">思路：</h2>
-
-<p>考虑将N! = 1 × 2 ×３× 4 ×……×N中的每一个因数进行质因数分解，结果为：1 × 2 × 3 × (2 × 2) × 5 × (2 × 3) × 7 × (2 × 2 ×2) ×……</p>
-
-<p>10进制数结尾的每一个0都表示有一个因数10存在（同理，对于一个M进制的数，让结尾多一个0就等价于乘以M）。10可以分解为2 × 5（只有质数2和5相乘能产生0，别的任何两个质数相乘都不能产生0），而每一个2和5相乘只产生一个0。</p>
-
-<p>所以，分解后的整个因数式中有多少对(2, 5)，结果中就有多少个0，而分解的结果中，2的个数显然是多于5的每一个偶数都包含至少一个2），因此，有多少个5，就有多少个(2, 5)对。</p>
-
-<p>n的阶乘的质因数分解式中5的个数可以用如下方法求：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1000的阶乘末尾0的个数:
-（下面的“／”代表“取整除法”）
-1000/5 + 1000/25 + 1000/125 + 1000/625 
-= 200 + 40 + 8 + 1 
-= 249(个)
-</code></pre>
-</div>
-
-<p>例子：求26的阶乘的尾部有多少个0. 
-26！ = 1 × 2 ×３× 4 × <strong>5</strong> × 6 × 7 × 8 × 9 × <strong>10</strong> × 11 × 12 × 13× 14 × <strong>15</strong> × 16 × 17 × 18 × 19 × <strong>20</strong> × 21 × 22 ×2３× 24 × <strong><em>25</em></strong> × 26 
-其中<strong>5</strong>、<strong>10</strong>、<strong>15</strong>、<strong>20</strong>各包含一个5，<strong><em>25</em></strong>包含两个5，共有 26/5 + 26/25 = 6（个）5相乘</p>
-<blockquote>
-  <p>25其实可以分解成2个5相乘，而26/5只计算了一个5，因此还要再加26/25.</p>
-</blockquote>
-
-<h2 id="代码">代码：</h2>
-<h4 id="python">python：</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
-    # @param n a integer
-    # @return ans a integer
-    def trailingZeros(self, n):
-        zeros = 0
-        while n &gt; 0:
-            zeros += n / 5
-            n /= 5
-        return zeros
-</code></pre>
-</div>
-
-<h4 id="java">java：</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
-    /*
-     * param n: As desciption
-     * return: An integer, denote the number of trailing zeros in n!
-     */
-    public long trailingZeros(long n) {
-        long count = 0;
-        for(int i = 1; Math.pow(5,i) &lt;= n; i++) {
-            count += n / (long)Math.pow(5,i);//注意强制类型转换
-        }
-        return count;
-    }
-};
-</code></pre>
-</div>
-<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
-
-
-
-                  <hr>
-
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="排序算法">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
-
-                      
-                        
-    <script>
-    var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
-    var idcomments_post_id;
-    var idcomments_post_url;
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-
-                      
-              <!--
-                </div>
-            </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
-        </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
-
-<script src="/assets/js/jquery.toc.js"></script>
-
-        </div>
-      </div>
-
-</section>
-
-<!-- /section.content -->
-
-
-
-
-
-    <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
-            </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
-        </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -409,37 +5,15 @@ O(logN)的时间复杂度</p>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-<!--     <title>lintcode “尾部的零” 题解 &mdash; Albert_LZG's Blog</title> -->
     <title>lintcode “尾部的零” 题解 - Albert_LZG's Blog</title>
 
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/"> -->
     <link rel="canonical" href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">
 
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
     <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
+  <link rel="shortcut icon" href="img/blog_logo1.ico">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -455,63 +29,14 @@ O(logN)的时间复杂度</p>
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<!--     
-    <meta property="og:title" content="lintcode “尾部的零” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 “Trailing Zeros” Problem:"> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <meta name="og:description" content="题目 “Trailing Zeros” Problem:">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
 </head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
 
 
 
@@ -542,14 +67,6 @@ O(logN)的时间复杂度</p>
                 </li>
                 
                 <li>
-                    <a href="/404.html">页面没有找到</a>
-                </li>
-                
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-                
-                <li>
                     <a href="/about/">About</a>
                 </li>
                 
@@ -558,23 +75,7 @@ O(logN)的时间复杂度</p>
                 </li>
                 
                 <li>
-                    <a href="/categories/">Categories</a>
-                </li>
-                
-                <li>
-                    <a href="/links/">Links</a>
-                </li>
-                
-                <li>
-                    <a href="/open-source/">Open Source Projects</a>
-                </li>
-                
-                <li>
-                    <a href="/tags/">repository</a>
-                </li>
-                
-                <li>
-                    <a href="/wiki/">Wiki</a>
+                    <a href="/repository/">repository</a>
                 </li>
                 
             </ul>
@@ -591,8 +92,6 @@ O(logN)的时间复杂度</p>
         background-image: url('/img/orange.jpg')
     }
 </style>
-
-
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -613,65 +112,15 @@ O(logN)的时间复杂度</p>
 </header>
 
 
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “尾部的零”">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “尾部的零” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
 
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-trailing-zeros-problem">题目 “Trailing Zeros” Problem:</h1>
+                <h1 id="题目-trailing-zeros-problem">题目 “Trailing Zeros” Problem:</h1>
 
 <p>Write an algorithm which computes the number of trailing zeros in n factorial.</p>
 
@@ -750,22 +199,22 @@ O(logN)的时间复杂度</p>
 
 
 
-                  <hr>
+                <hr>
 
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="排序算法">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/16/aplusb-solution-1/" data-toggle="tooltip" data-placement="top" title="lintcode “A + B” 题解">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="排序算法">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                      
+                    
                         
     <script>
     var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
@@ -775,110 +224,117 @@ O(logN)的时间复杂度</p>
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
-                      
-              <!--
-                </div>
+                    
             </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
         </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
+    </div>
+</article>
 
 
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
 
-<script src="/assets/js/jquery.toc.js"></script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        </div>
-      </div>
 
-</section>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- kill the Facebook and Weibo -->
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
-<!-- /section.content -->
+                    
+                    <li>
+                        <a href="https://github.com/AlbertLZG">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <!--
+                    
+                    -->
 
+                    <!--
+                    
+                    -->
 
+                    
+                    <!--
+                    
+                    -->
 
-
-
-
-        <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+                </ul>
+                <p class="copyright text-muted">
+                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
+                </p>
             </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
         </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 
 </body>

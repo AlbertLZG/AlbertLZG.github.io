@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-20T15:34:43+08:00</updated><id>http://localhost:4000/</id><title type="html">Albert_LZG’s Blog</title><subtitle>李志刚|读书·编程·思</subtitle><entry><title type="html">排序算法</title><link href="http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="排序算法" /><published>2017-02-18T00:00:00+08:00</published><updated>2017-02-18T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">&lt;p&gt;#注：以下图片来自&lt;a href=&quot;https://visualgo.net/&quot;&gt;https://visualgo.net/&lt;/a&gt;网站&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-22T11:17:25+08:00</updated><id>http://localhost:4000/</id><title type="html">Albert_LZG’s Blog</title><subtitle>李志刚|读书·编程·思</subtitle><entry><title type="html">排序算法</title><link href="http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="alternate" type="text/html" title="排序算法" /><published>2017-02-18T00:00:00+08:00</published><updated>2017-02-18T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95</id><content type="html" xml:base="http://localhost:4000/2017/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">&lt;h1 id=&quot;注以下图片来自httpsvisualgonet网站&quot;&gt;注：以下图片来自&lt;a href=&quot;https://visualgo.net/&quot;&gt;https://visualgo.net/&lt;/a&gt;网站&lt;/h1&gt;
 
-&lt;p&gt;#冒泡排序法（Bubble Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Bubble-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;冒泡排序法bubble-sort&quot;&gt;冒泡排序法（Bubble Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Bubble-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#选择排序法（Selection Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Selection-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;选择排序法selection-sort&quot;&gt;选择排序法（Selection Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Selection-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#插入排序法（Insertion Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Insertion-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;插入排序法insertion-sort&quot;&gt;插入排序法（Insertion Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Insertion-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#合并排序法(Merge Sort)
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Merge-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;合并排序法merge-sort&quot;&gt;合并排序法(Merge Sort)&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Merge-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#快速排序法（Quick Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Quick-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;快速排序法quick-sort&quot;&gt;快速排序法（Quick Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Quick-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#随机快速排序法（Randomized Quick Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Randomized-Quick-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;随机快速排序法randomized-quick-sort&quot;&gt;随机快速排序法（Randomized Quick Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Randomized-Quick-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#计数排序法（Counting Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Counting-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;计数排序法counting-sort&quot;&gt;计数排序法（Counting Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Counting-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;#基数排序法（Radix Sort）
-&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Radix-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="算法" /><summary type="html">#注：以下图片来自https://visualgo.net/网站</summary></entry><entry><title type="html">lintcode “尾部的零” 题解</title><link href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/" rel="alternate" type="text/html" title="lintcode “尾部的零” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/trailingZeros-solution-2</id><content type="html" xml:base="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">&lt;p&gt;#题目 “Trailing Zeros” Problem:&lt;/p&gt;
+&lt;h1 id=&quot;基数排序法radix-sort&quot;&gt;基数排序法（Radix Sort）&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-18-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/Radix-Sort.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="算法" /><summary type="html">注：以下图片来自https://visualgo.net/网站</summary></entry><entry><title type="html">lintcode “尾部的零” 题解</title><link href="http://localhost:4000/2017/02/16/trailingZeros-solution-2/" rel="alternate" type="text/html" title="lintcode “尾部的零” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/trailingZeros-solution-2</id><content type="html" xml:base="http://localhost:4000/2017/02/16/trailingZeros-solution-2/">&lt;h1 id=&quot;题目-trailing-zeros-problem&quot;&gt;题目 “Trailing Zeros” Problem:&lt;/h1&gt;
 
 &lt;p&gt;Write an algorithm which computes the number of trailing zeros in n factorial.&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 &lt;p&gt;Challenge 
 O(log N) time&lt;/p&gt;
 
-&lt;p&gt;#题目 “尾部的零”问题:&lt;/p&gt;
+&lt;h1 id=&quot;题目-尾部的零问题&quot;&gt;题目 “尾部的零”问题:&lt;/h1&gt;
 
 &lt;p&gt;设计一个算法，计算出n阶乘中尾部零的个数&lt;/p&gt;
 
@@ -42,7 +42,7 @@ O(log N) time&lt;/p&gt;
 &lt;p&gt;挑战 
 O(logN)的时间复杂度&lt;/p&gt;
 
-&lt;p&gt;##思路：&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;思路：&lt;/h2&gt;
 
 &lt;p&gt;考虑将N! = 1 × 2 ×３× 4 ×……×N中的每一个因数进行质因数分解，结果为：1 × 2 × 3 × (2 × 2) × 5 × (2 × 3) × 7 × (2 × 2 ×2) ×……&lt;/p&gt;
 
@@ -67,8 +67,8 @@ O(logN)的时间复杂度&lt;/p&gt;
   &lt;p&gt;25其实可以分解成2个5相乘，而26/5只计算了一个5，因此还要再加26/25.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;##代码：
-####python：&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;代码：&lt;/h2&gt;
+&lt;h4 id=&quot;python&quot;&gt;python：&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution:
     # @param n a integer
     # @return ans a integer
@@ -81,7 +81,7 @@ O(logN)的时间复杂度&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;####java：&lt;/p&gt;
+&lt;h4 id=&quot;java&quot;&gt;java：&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {
     /*
      * param n: As desciption
@@ -97,7 +97,7 @@ O(logN)的时间复杂度&lt;/p&gt;
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">#题目 “Trailing Zeros” Problem:</summary></entry><entry><title type="html">lintcode “A + B” 题解</title><link href="http://localhost:4000/2017/02/16/aplusb-solution-1/" rel="alternate" type="text/html" title="lintcode “A + B” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/aplusb-solution-1</id><content type="html" xml:base="http://localhost:4000/2017/02/16/aplusb-solution-1/">&lt;p&gt;#题目 A + B Problem：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">题目 “Trailing Zeros” Problem:</summary></entry><entry><title type="html">lintcode “A + B” 题解</title><link href="http://localhost:4000/2017/02/16/aplusb-solution-1/" rel="alternate" type="text/html" title="lintcode “A + B” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/aplusb-solution-1</id><content type="html" xml:base="http://localhost:4000/2017/02/16/aplusb-solution-1/">&lt;h1 id=&quot;题目-a--b-problem&quot;&gt;题目 A + B Problem：&lt;/h1&gt;
 
 &lt;p&gt;Write a function that add two numbers A and B. You should not use + or any arithmetic operators.&lt;/p&gt;
 
@@ -116,7 +116,7 @@ Can I use bit operation?
 &lt;p&gt;Example:
 Given a=1 and b=2 return 3&lt;/p&gt;
 
-&lt;p&gt;#题目 A + B 问题：&lt;/p&gt;
+&lt;h1 id=&quot;题目-a--b-问题&quot;&gt;题目 A + B 问题：&lt;/h1&gt;
 
 &lt;p&gt;给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。&lt;/p&gt;
 
@@ -135,7 +135,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;p&gt;样例：
 如果 a=1 并且 b=2，返回3&lt;/p&gt;
 
-&lt;p&gt;##思路：&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;思路：&lt;/h2&gt;
 
 &lt;p&gt;首先，题中给定，所有数均为32位大小。&lt;/p&gt;
 
@@ -190,7 +190,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 
 &lt;p&gt;代码：&lt;/p&gt;
 
-&lt;p&gt;####python：&lt;/p&gt;
+&lt;h4 id=&quot;python&quot;&gt;python：&lt;/h4&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution:
     &quot;&quot;&quot;
@@ -210,7 +210,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
         return a
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;####c：&lt;/p&gt;
+&lt;h4 id=&quot;c&quot;&gt;c：&lt;/h4&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 int bitAdd(int a,int b)
 2 {
@@ -223,7 +223,7 @@ Given a=1 and b=2 return 3&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;####c++:&lt;/p&gt;
+&lt;h4 id=&quot;c-1&quot;&gt;c++:&lt;/h4&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {
     /*
@@ -279,7 +279,7 @@ public int aplusb(int a, int b) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">#题目 A + B Problem：</summary></entry><entry><title type="html">lintcode “二叉树遍历” 题解</title><link href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" rel="alternate" type="text/html" title="lintcode “二叉树遍历” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/Binary-Tree%20Preorder-Traversal-66-67-68-69</id><content type="html" xml:base="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">&lt;p&gt;#题目 Binary Tree Preorder Traversal&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">题目 A + B Problem：</summary></entry><entry><title type="html">lintcode “二叉树遍历” 题解</title><link href="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" rel="alternate" type="text/html" title="lintcode “二叉树遍历” 题解" /><published>2017-02-16T00:00:00+08:00</published><updated>2017-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/16/Binary-Tree%20Preorder-Traversal-66-67-68-69</id><content type="html" xml:base="http://localhost:4000/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/">&lt;h1 id=&quot;题目-binary-tree-preorder-traversal&quot;&gt;题目 Binary Tree Preorder Traversal&lt;/h1&gt;
 
 &lt;p&gt;Given a binary tree, return the preorder traversal of its nodes’ values.&lt;/p&gt;
 
@@ -296,7 +296,7 @@ Given:&lt;/p&gt;
 
 &lt;p&gt;return [1,2,4,5,3].&lt;/p&gt;
 
-&lt;p&gt;#二叉树的前序遍历&lt;/p&gt;
+&lt;h1 id=&quot;二叉树的前序遍历&quot;&gt;二叉树的前序遍历&lt;/h1&gt;
 
 &lt;p&gt;给出一棵二叉树，返回其节点值的前序遍历。&lt;/p&gt;
 
@@ -313,9 +313,11 @@ Given:&lt;/p&gt;
 
 &lt;p&gt;返回 [1,2,3].&lt;/p&gt;
 
-&lt;p&gt;##题解：&lt;/p&gt;
+&lt;h2 id=&quot;题解&quot;&gt;题解：&lt;/h2&gt;
 
-&lt;p&gt;递归：&lt;/p&gt;
+&lt;p&gt;思路：递归。&lt;/p&gt;
+
+&lt;h4 id=&quot;python&quot;&gt;Python：&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Python:&quot;&gt;&quot;&quot;&quot;
 Definition of TreeNode:
@@ -341,7 +343,7 @@ class Solution:
             self.preorderTraversal(root.right)
         return self.res
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;#Binary Tree Inorder Traversal&lt;/p&gt;
+&lt;h1 id=&quot;binary-tree-inorder-traversal&quot;&gt;Binary Tree Inorder Traversal&lt;/h1&gt;
 
 &lt;p&gt;Given a binary tree, return the inorder traversal of its nodes’ values.&lt;/p&gt;
 
@@ -358,7 +360,7 @@ Given binary tree {1,#,2,3},&lt;/p&gt;
 
 &lt;p&gt;return [1,3,2].&lt;/p&gt;
 
-&lt;p&gt;#二叉树的中序遍历&lt;/p&gt;
+&lt;h1 id=&quot;二叉树的中序遍历&quot;&gt;二叉树的中序遍历&lt;/h1&gt;
 
 &lt;p&gt;给出一棵二叉树,返回其中序遍历&lt;/p&gt;
 
@@ -375,6 +377,8 @@ Given binary tree {1,#,2,3},&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;返回 [1,3,2].&lt;/p&gt;
+
+&lt;h4 id=&quot;python-1&quot;&gt;Python：&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;&quot;&quot;&quot;
 Definition of TreeNode:
@@ -400,7 +404,7 @@ class Solution:
             self.inorderTraversal(root.right)
         return self.res
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;#Binary Tree Postorder Traversal&lt;/p&gt;
+&lt;h1 id=&quot;binary-tree-postorder-traversal&quot;&gt;Binary Tree Postorder Traversal&lt;/h1&gt;
 
 &lt;p&gt;Given a binary tree, return the postorder traversal of its nodes’ values.&lt;/p&gt;
 
@@ -417,7 +421,7 @@ Given binary tree {1,#,2,3},&lt;/p&gt;
 
 &lt;p&gt;return [3,2,1].&lt;/p&gt;
 
-&lt;p&gt;#二叉树的后序遍历&lt;/p&gt;
+&lt;h1 id=&quot;二叉树的后序遍历&quot;&gt;二叉树的后序遍历&lt;/h1&gt;
 
 &lt;p&gt;给出一棵二叉树，返回其节点值的后序遍历。&lt;/p&gt;
 
@@ -435,7 +439,8 @@ Given binary tree {1,#,2,3},&lt;/p&gt;
 
 &lt;p&gt;返回 [3,2,1]&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;&quot;&quot;
+&lt;h4 id=&quot;python-2&quot;&gt;Python：&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;&quot;&quot;&quot;
 Definition of TreeNode:
 class TreeNode:
     def __init__(self, val):
@@ -459,9 +464,8 @@ class Solution:
             self.res.append(root.val)
         return self.res
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;#Binary Tree Level Order Traversal&lt;/p&gt;
+&lt;h1 id=&quot;binary-tree-level-order-traversal&quot;&gt;Binary Tree Level Order Traversal&lt;/h1&gt;
 
 &lt;p&gt;Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).&lt;/p&gt;
 
@@ -485,7 +489,7 @@ Given binary tree {3,9,20,#,#,15,7},&lt;/p&gt;
   [15,7]
 ]&lt;/p&gt;
 
-&lt;p&gt;#二叉树的层次遍历&lt;/p&gt;
+&lt;h1 id=&quot;二叉树的层次遍历&quot;&gt;二叉树的层次遍历&lt;/h1&gt;
 
 &lt;p&gt;给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）&lt;/p&gt;
 
@@ -508,6 +512,8 @@ Given binary tree {3,9,20,#,#,15,7},&lt;/p&gt;
   [9,20],
   [15,7]
 ]&lt;/p&gt;
+
+&lt;h4 id=&quot;python-3&quot;&gt;Python：&lt;/h4&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;&quot;&quot;
 Definition of TreeNode:
@@ -546,7 +552,7 @@ class Solution:
         return self.res
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">#题目 Binary Tree Preorder Traversal</summary></entry><entry><title type="html">lintcode “丑数 II” 题解</title><link href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" rel="alternate" type="text/html" title="lintcode “丑数 II” 题解" /><published>2017-02-15T00:00:00+08:00</published><updated>2017-02-15T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4</id><content type="html" xml:base="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">&lt;p&gt;#题目Ugly Number II：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">题目 Binary Tree Preorder Traversal</summary></entry><entry><title type="html">lintcode “丑数 II” 题解</title><link href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/" rel="alternate" type="text/html" title="lintcode “丑数 II” 题解" /><published>2017-02-15T00:00:00+08:00</published><updated>2017-02-15T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4</id><content type="html" xml:base="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">&lt;h2 id=&quot;题目ugly-number-ii&quot;&gt;题目Ugly Number II：&lt;/h2&gt;
 
 &lt;p&gt;Ugly number is a number that only have factors 2, 3 and 5.
 Design an algorithm to find the nth ugly number. The first 10 ugly numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12…&lt;/p&gt;
@@ -560,7 +566,7 @@ If n=9, return 10.&lt;/p&gt;
 &lt;p&gt;Challenge 
 O(n log n) or O(n) time.&lt;/p&gt;
 
-&lt;p&gt;#丑数 II&lt;/p&gt;
+&lt;h2 id=&quot;丑数-ii&quot;&gt;丑数 II&lt;/h2&gt;
 
 &lt;p&gt;设计一个算法，找出只含素因子2，3，5 的第 n 大的数。
 符合条件的数如：1, 2, 3, 4, 5, 6, 8, 9, 10, 12…&lt;/p&gt;
@@ -574,41 +580,41 @@ O(n log n) or O(n) time.&lt;/p&gt;
 &lt;p&gt;挑战：
 O(n log n) 或者 O(n) 时间复杂度.&lt;/p&gt;
 
-&lt;p&gt;##题解：&lt;/p&gt;
+&lt;h3 id=&quot;题解&quot;&gt;题解：&lt;/h3&gt;
 
 &lt;p&gt;由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举是不行的。比如下面：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-c++:&quot;&gt;class Solution {  
 public:  
-    /* 
-     * @param n an integer 
-     * @return the nth prime number as description. 
-     */  
-    int nthUglyNumber(int n) {  
-        // write your code here  
-        int countN = 0;  
-        int m = 0;  
-        int lastNumber = 2;  
-        while(countN &amp;lt; n)  
-        {  
-            m++;  
-            int number = m;  
-            while(number % 2 == 0)  
-                number = number / 2;  
-            while(number % 3 == 0)  
-                number = number / 3;  
-            while(number % 5 == 0)  
-                number = number / 5;  
-            if(number == 1)  
-            {  
-                countN++;  
-            }  
-        }  
-        return m;  
-    }  
+	/* 
+	 * @param n an integer 
+	 * @return the nth prime number as description. 
+	 */  
+	int nthUglyNumber(int n) {  
+		// write your code here  
+		int countN = 0;  
+		int m = 0;  
+		int lastNumber = 2;  
+		while(countN &amp;lt; n)  
+		{  
+			m++;  
+			int number = m;  
+			while(number % 2 == 0)  
+				number = number / 2;  
+			while(number % 3 == 0)  
+				number = number / 3;  
+			while(number % 5 == 0)  
+				number = number / 5;  
+			if(number == 1)  
+			{  
+				countN++;  
+			}  
+		}  
+		return m;  
+	}  
 };
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;###思路：&lt;/p&gt;
+&lt;h4 id=&quot;思路&quot;&gt;思路：&lt;/h4&gt;
 
 &lt;p&gt;由丑数的定义可知，任何一个丑数都是2^i*3^j*5^k这种形式的，并且任意一个丑数乘以2、3、5后均可以得到新的丑数。&lt;/p&gt;
 
@@ -690,67 +696,67 @@ ugly[2] = min(ugly[1]*2, ugly[0]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;##代码：&lt;/p&gt;
+&lt;h3 id=&quot;代码&quot;&gt;代码：&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;注意：代码需要考虑有重数问题，即当ugly[index2]\*2, ugly[index3]\*3, ugly[index5]\*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]\*2 = ugly[index3]\*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]\*3也被添加进去了。下面两段代码均有考虑该情况。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;####python：&lt;/p&gt;
+&lt;h5 id=&quot;python&quot;&gt;python：&lt;/h5&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution:
-    &quot;&quot;&quot;
-    @param {int} n an integer.
-    @return {int} the nth prime number as description.
-    &quot;&quot;&quot;
-    def nthUglyNumber(self, n):
-        # write your code here
-        ugly = [1]
-        index2 = 0
-        index3 = 0
-        index5 = 0
-        for i in range(n):
-            temp_ugly = min(ugly[index2]*2,ugly[index3]*3,ugly[index5]*5)
-            ugly.append(temp_ugly)
-            index2 +=1 if temp_ugly &amp;gt;= ugly[index2]*2 else 0
-            index3 +=1 if temp_ugly &amp;gt;= ugly[index3]*3 else 0
-            index5 +=1 if temp_ugly &amp;gt;= ugly[index5]*5 else 0
-        return ugly[n-1]
+	&quot;&quot;&quot;
+	@param {int} n an integer.
+	@return {int} the nth prime number as description.
+	&quot;&quot;&quot;
+	def nthUglyNumber(self, n):
+		# write your code here
+		ugly = [1]
+		index2 = 0
+		index3 = 0
+		index5 = 0
+		for i in range(n):
+			temp_ugly = min(ugly[index2]*2,ugly[index3]*3,ugly[index5]*5)
+			ugly.append(temp_ugly)
+			index2 +=1 if temp_ugly &amp;gt;= ugly[index2]*2 else 0
+			index3 +=1 if temp_ugly &amp;gt;= ugly[index3]*3 else 0
+			index5 +=1 if temp_ugly &amp;gt;= ugly[index5]*5 else 0
+		return ugly[n-1]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;####c++：&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {  
 public:  
-    /* 
-     * @param n an integer 
-     * @return the nth prime number as description. 
-     */  
-    int nthUglyNumber(int n) {  
-        // write your code here  
-        int *ugly = new int[n];  
-        ugly[0] = 1;  
-        int num_2 = 0;  
-        int num_3 = 0;  
-        int num_5 = 0;  
-        for(int i = 1;i&amp;lt;n;i++)  
-        {  
-            ugly[i] = min(min(ugly[num_2]*2,ugly[num_3]*3),ugly[num_5]*5);  
-            if(ugly[i] / ugly[num_2] == 2)  
-                num_2 ++;  
-            if(ugly[i] / ugly[num_3] == 3)  
-                num_3 ++;  
-            if(ugly[i] / ugly[num_5] == 5)  
-                num_5 ++;  
-        }  
-        return ugly[n-1];  
-    }  
+	/* 
+	 * @param n an integer 
+	 * @return the nth prime number as description. 
+	 */  
+	int nthUglyNumber(int n) {  
+		// write your code here  
+		int *ugly = new int[n];  
+		ugly[0] = 1;  
+		int num_2 = 0;  
+		int num_3 = 0;  
+		int num_5 = 0;  
+		for(int i = 1;i&amp;lt;n;i++)  
+		{  
+			ugly[i] = min(min(ugly[num_2]*2,ugly[num_3]*3),ugly[num_5]*5);  
+			if(ugly[i] / ugly[num_2] == 2)  
+				num_2 ++;  
+			if(ugly[i] / ugly[num_3] == 3)  
+				num_3 ++;  
+			if(ugly[i] / ugly[num_5] == 5)  
+				num_5 ++;  
+		}  
+		return ugly[n-1];  
+	}  
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">#题目Ugly Number II：</summary></entry><entry><title type="html">关于这个博客</title><link href="http://localhost:4000/2017/02/15/About-this-blog/" rel="alternate" type="text/html" title="关于这个博客" /><published>2017-02-15T00:00:00+08:00</published><updated>2017-02-15T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/15/About-this-blog</id><content type="html" xml:base="http://localhost:4000/2017/02/15/About-this-blog/">&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="lintcode题解(python)" /><summary type="html">题目Ugly Number II：</summary></entry><entry><title type="html">关于这个博客</title><link href="http://localhost:4000/2017/02/15/About-this-blog/" rel="alternate" type="text/html" title="关于这个博客" /><published>2017-02-15T00:00:00+08:00</published><updated>2017-02-15T00:00:00+08:00</updated><id>http://localhost:4000/2017/02/15/About-this-blog</id><content type="html" xml:base="http://localhost:4000/2017/02/15/About-this-blog/">&lt;hr /&gt;
 
-&lt;p&gt;#关于为什么想要开自己的博客？&lt;/p&gt;
+&lt;h1 id=&quot;关于为什么想要开自己的博客&quot;&gt;关于为什么想要开自己的博客？&lt;/h1&gt;
 
 &lt;p&gt;博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客
 网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网
@@ -766,16 +772,16 @@ CSND、博客园等技术博客网站上面都申请账号，收藏、转载自�
 
 &lt;p&gt;由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。&lt;/p&gt;
 
-&lt;p&gt;##在此立下Flag：&lt;/p&gt;
+&lt;h2 id=&quot;在此立下flag&quot;&gt;在此立下Flag：&lt;/h2&gt;
 
 &lt;p&gt;为督促自己每日的学习，在此立下Flag：&lt;/p&gt;
 
-&lt;p&gt;###一、按时将学到的数据结构与算法方法的知识更新到博客&lt;/p&gt;
+&lt;h3 id=&quot;一按时将学到的数据结构与算法方法的知识更新到博客&quot;&gt;一、按时将学到的数据结构与算法方法的知识更新到博客&lt;/h3&gt;
 
-&lt;p&gt;###二、按时将OJ网站上刷的题更新到博客&lt;/p&gt;
+&lt;h3 id=&quot;二按时将oj网站上刷的题更新到博客&quot;&gt;二、按时将OJ网站上刷的题更新到博客&lt;/h3&gt;
 
-&lt;p&gt;###三、按时将读到的最新paper及自己的看法更新到博客&lt;/p&gt;
+&lt;h3 id=&quot;三按时将读到的最新paper及自己的看法更新到博客&quot;&gt;三、按时将读到的最新paper及自己的看法更新到博客&lt;/h3&gt;
 
 &lt;p&gt;以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="说明" /><summary type="html">#关于为什么想要开自己的博客？ 博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客 网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网 站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下： 其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在 CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢 的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。 其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。 其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。 由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。 ##在此立下Flag： 为督促自己每日的学习，在此立下Flag： ###一、按时将学到的数据结构与算法方法的知识更新到博客 ###二、按时将OJ网站上刷的题更新到博客 ###三、按时将读到的最新paper及自己的看法更新到博客 以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Albert_LZG</name></author><category term="说明" /><summary type="html">关于为什么想要开自己的博客？ 博客已经火了好多年了，早已不是什么新鲜事物，并且有那么多的博客 网站，注册个账号即可，为什么还要费这么大劲儿整个自己的博客网 站？我今天也纠结了一下，但觉得还是得整个自己的博客网站，原因如下： 其一：想拥有属于自己的博客的想法由来以久，虽然很多年前我就在 CSND、博客园等技术博客网站上面都申请账号，收藏、转载自己喜欢 的文章（注：CSDN禁止转载），但仅仅把博客作为自己收藏优秀的文章的一个资料库，当时的初衷就是希望有个将自己在网上看过的优秀的技术文章收集起来的办法，而这些技术博客网站无疑是十分便捷的。只需要注册个账号即可实现目的。但是，后来发现这给我带来的提升是十分有限的，一些时候为了解决某些问题而找到的好的解决方案在被收藏进自己的账号之后便再也未曾阅览过。而技术博客网站的界面风格又使得我提不起在里面写文章的欲望。正所谓买书不如借书，优秀的文章一经收藏便如石沉大海般沉寂。独乐乐不如众乐乐，一些知识自己学会并不见得真的理解透了，能够给别人讲明白才算是真的掌握了。而建个自己的博客无意可以起到这两方面的作用。一方面，自己学会的知识，要能够以大多数人都理解的方式写出来，既是给别人看，也是给很长时间之后的自己看；另一方面，对于优秀的技术文章，必须经过自己的一番编辑整理才可以加进自己的博客（当然一定要注明文章来源～），相比之前的轻轻一点就收藏了，自然印象要深刻得多了。 其二：当今时代，世界越来越平坦（感兴趣的可以读下《世界是平的》），互联网时代，知识随手可得、随处可见。技术的开源时代新技术的开发与普及速度大大加快，而论文的开放获取、遍地都是的公开课使得前沿知识、高等教育被任何人在任何时候都可以接受。很多公司正是源于某一开源项目，而无数创意和想法也在开源项目中诞生。在这样的大潮中，积极地参与其中，才是提高自己的最有效的方式。积极地获取最新知识、参与开源项目的开发中，并积极地传播知识，才能最快的提升自己。 其三：博客是开放给所有人看的，由于内容是写给大家看的，自然就会感到警醒，写得不好会被读者骂的，而这也正好可以起到督促自己认真总结知识的目的。 由以上三点，我决定还是费了大半天时间，搭建个属于自己的网站。 在此立下Flag： 为督促自己每日的学习，在此立下Flag： 一、按时将学到的数据结构与算法方法的知识更新到博客 二、按时将OJ网站上刷的题更新到博客 三、按时将读到的最新paper及自己的看法更新到博客 以上三点中的按时的含义是：有则更新，每日小更新，定期大更新。</summary></entry></feed>

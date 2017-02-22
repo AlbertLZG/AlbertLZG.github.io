@@ -1,534 +1,3 @@
-<!--
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李志刚|读书·编程·思">
-
-<!--     <title>lintcode “丑数 II” 题解 &mdash; Albert_LZG's Blog</title> -->
-    <title>lintcode “丑数 II” 题解 - Albert_LZG's Blog</title>
-
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/"> -->
-    <link rel="canonical" href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">
-
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
-    <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-<!--     
-    <meta property="og:title" content="lintcode “丑数 II” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目Ugly Number II："> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
-
-    <meta name="og:description" content="题目Ugly Number II：">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-15">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
-</head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
-
-    <!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/orange.jpg')
-    }
-</style>
-
-
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="Tags">
-                        
-                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
-                        
-                    </div>
-                    <h1>lintcode “丑数 II” 题解</h1>
-                    
-                    <span class="meta">Posted by Albert_LZG on February 15, 2017</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “丑数 II">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “丑数 II” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/15
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
-
-
-
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h2 id="题目ugly-number-ii">题目Ugly Number II：</h2>
-
-<p>Ugly number is a number that only have factors 2, 3 and 5.
-Design an algorithm to find the nth ugly number. The first 10 ugly numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</p>
-
-<p>Notice：
-Note that 1 is typically treated as an ugly number.</p>
-
-<p>Example：
-If n=9, return 10.</p>
-
-<p>Challenge 
-O(n log n) or O(n) time.</p>
-
-<h2 id="丑数-ii">丑数 II</h2>
-
-<p>设计一个算法，找出只含素因子2，3，5 的第 n 大的数。
-符合条件的数如：1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</p>
-
-<p>注意事项：
-我们可以认为1也是一个丑数</p>
-
-<p>样例：
-如果n = 9， 返回 10</p>
-
-<p>挑战：
-O(n log n) 或者 O(n) 时间复杂度.</p>
-
-<h3 id="题解">题解：</h3>
-
-<p>由题目要求计算复杂度为O(nlogn)或者O(n)可知，直接暴力枚举是不行的。比如下面：</p>
-
-<pre><code class="language-c++:">class Solution {  
-public:  
-	/* 
-	 * @param n an integer 
-	 * @return the nth prime number as description. 
-	 */  
-	int nthUglyNumber(int n) {  
-		// write your code here  
-		int countN = 0;  
-		int m = 0;  
-		int lastNumber = 2;  
-		while(countN &lt; n)  
-		{  
-			m++;  
-			int number = m;  
-			while(number % 2 == 0)  
-				number = number / 2;  
-			while(number % 3 == 0)  
-				number = number / 3;  
-			while(number % 5 == 0)  
-				number = number / 5;  
-			if(number == 1)  
-			{  
-				countN++;  
-			}  
-		}  
-		return m;  
-	}  
-};
-</code></pre>
-<h4 id="思路">思路：</h4>
-
-<p>由丑数的定义可知，任何一个丑数都是2^i*3^j*5^k这种形式的，并且任意一个丑数乘以2、3、5后均可以得到新的丑数。</p>
-
-<ul>
-  <li>
-    <p>第一个丑数ugly[0]为1，此时i = j = k = 0。</p>
-  </li>
-  <li>
-    <p>求解第二个丑数：
-ugly[1] = min(ugly[0]*2, ugly[0]*3, ugly[0]*5) = min(1*2, 1*3, 1*5) = 2 = 2^1*3^0*5^0
-即此时的i = 1。</p>
-  </li>
-  <li>
-    <p>求解第三个丑数：
-ugly[2] = min(ugly[1]*2, ugly[0]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^1*5^0
-即此时的j = 1</p>
-
-    <p>####思考:</p>
-  </li>
-</ul>
-
-<ol>
-  <li>
-    <p>为什么这里要用2前面的乘数是ugly[1]而不是ugly[0]?</p>
-
-    <p>因为ugly[0]*2已经作为第二个丑数赋值给了ugly[1]。</p>
-  </li>
-  <li>
-    <p>为什么这三个数的最小值就是还没有添加到丑数序列中的所有丑数的最小值？</p>
-
-    <p>因为任意一个丑数乘以2、3、5后均可以得到新的丑数，同时，任意一个丑数都可以由前面的某一丑数乘以2、3或者5得到，除了第一个丑数1。因此还没有添加进丑数序列的丑数有：</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> ugly[0]*2*2, ugly[0]*2*2*2, ……（ugly[0]*2作为已经赋给ugly[1]了）
- ugly[1]*2, ugly[1]*2*2,……（注意ugly[1]*2 = ugly[0]*2*2，…… ）
- ugly[2]*2, ugly[2]*2*2,……
- …… …… …… ……
- ugly[n]*2, ugly[n]*2*2,……
-</code></pre>
-    </div>
-
-    <p>上面丑数序列里最小的数是ugly[1]*2。</p>
-
-    <p>同理，</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> ugly[0]*3, ugly[0]*3*3,……
- ugly[1]*3,……
- ……  最小的数是ugly[0]*3
-
- ugly[0]*5, ugly[0]*5*5,……
- ugly[1]*5,……
- ……  里面最小的数是ugly[0]*5
-</code></pre>
-    </div>
-
-    <p>因此只需要比较ugly[1]<em>2, ugly[0]</em>3, ugly[0]*5三个数，将其中的最小值作为下一个要添加的丑数即可。</p>
-  </li>
-  <li>
-    <p>为什么这里要用3和5前面的乘数是ugly[0]而不是ugly[1]?</p>
-
-    <p>因为ugly[1]&gt;ugly[0],而ugly[0]<em>3和ugly[0]</em>5均是还没有添加进丑数序列的丑数，它们都分别比ugly[1]<em>3和ugly[1]</em>5小。</p>
-  </li>
-  <li>
-    <p>那2、3、5前面的乘数应该等于多少？</p>
-
-    <p>初始时设置索引变量index2=index3=index5=0分别代表相应乘数前面的数字是哪个丑数，即ugly[index2],ugly[index3],ugly[index5]。每当ugly[index2]*2被添加进丑数序列中时，令index2增加一，否则保持不变。3和5同理。下面用该方法求第四个丑数：)</p>
-  </li>
-</ol>
-
-<ul>
-  <li>
-    <p>求解第四个丑数：</p>
-
-    <p>ugly[2] = min(ugly[1]*2, ugly[1]*3, ugly[0]*5) = min(2*2, 1*3, 1*5) = 3 = 2^0*3^1*5^0</p>
-
-    <p>初始化令index2=index3=index5=0；
-  求第二个丑数得到ugly[index2]*2=ugly[0]*2=2，因此index2从0增加到1；
-  求第三个丑数时得ugly[index3]*3=ugly[0]*3=3，因此index3从0增加到1；
-  求第四个丑数时index2=1，index3=1，index5=0，因此比较ugly[1]*2, ugly[1]*3, ugly[0]*5三个数，得ugly[1]*2是其中最小值，这时令index2从1增加到2。</p>
-  </li>
-</ul>
-
-<h3 id="代码">代码：</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>注意：代码需要考虑有重数问题，即当ugly[index2]\*2, ugly[index3]\*3, ugly[index5]\*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]\*2 = ugly[index3]\*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]\*3也被添加进去了。下面两段代码均有考虑该情况。
-</code></pre>
-</div>
-
-<h5 id="python">python：</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
-	"""
-	@param {int} n an integer.
-	@return {int} the nth prime number as description.
-	"""
-	def nthUglyNumber(self, n):
-		# write your code here
-		ugly = [1]
-		index2 = 0
-		index3 = 0
-		index5 = 0
-		for i in range(n):
-			temp_ugly = min(ugly[index2]*2,ugly[index3]*3,ugly[index5]*5)
-			ugly.append(temp_ugly)
-			index2 +=1 if temp_ugly &gt;= ugly[index2]*2 else 0
-			index3 +=1 if temp_ugly &gt;= ugly[index3]*3 else 0
-			index5 +=1 if temp_ugly &gt;= ugly[index5]*5 else 0
-		return ugly[n-1]
-</code></pre>
-</div>
-
-<p>####c++：</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {  
-public:  
-	/* 
-	 * @param n an integer 
-	 * @return the nth prime number as description. 
-	 */  
-	int nthUglyNumber(int n) {  
-		// write your code here  
-		int *ugly = new int[n];  
-		ugly[0] = 1;  
-		int num_2 = 0;  
-		int num_3 = 0;  
-		int num_5 = 0;  
-		for(int i = 1;i&lt;n;i++)  
-		{  
-			ugly[i] = min(min(ugly[num_2]*2,ugly[num_3]*3),ugly[num_5]*5);  
-			if(ugly[i] / ugly[num_2] == 2)  
-				num_2 ++;  
-			if(ugly[i] / ugly[num_3] == 3)  
-				num_3 ++;  
-			if(ugly[i] / ugly[num_5] == 5)  
-				num_5 ++;  
-		}  
-		return ugly[n-1];  
-	}  
-};
-</code></pre>
-</div>
-
-<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
-
-
-
-                  <hr>
-
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/15/About-this-blog/" data-toggle="tooltip" data-placement="top" title="关于这个博客">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
-
-                      
-                        
-    <script>
-    var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
-    var idcomments_post_id;
-    var idcomments_post_url;
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-
-                      
-              <!--
-                </div>
-            </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
-        </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
-
-<script src="/assets/js/jquery.toc.js"></script>
-
-        </div>
-      </div>
-
-</section>
-
-<!-- /section.content -->
-
-
-
-
-
-    <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
-            </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
-        </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -536,37 +5,15 @@ public:
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-<!--     <title>lintcode “丑数 II” 题解 &mdash; Albert_LZG's Blog</title> -->
     <title>lintcode “丑数 II” 题解 - Albert_LZG's Blog</title>
 
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/"> -->
     <link rel="canonical" href="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">
 
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
     <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
+  <link rel="shortcut icon" href="img/blog_logo1.ico">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -582,63 +29,14 @@ public:
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<!--     
-    <meta property="og:title" content="lintcode “丑数 II” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目Ugly Number II："> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <meta name="og:description" content="题目Ugly Number II：">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/15/lintcode-%E4%B8%91%E6%95%B0II-%E9%A2%98%E8%A7%A3-4/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-15">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
 </head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
 
 
 
@@ -669,14 +67,6 @@ public:
                 </li>
                 
                 <li>
-                    <a href="/404.html">页面没有找到</a>
-                </li>
-                
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-                
-                <li>
                     <a href="/about/">About</a>
                 </li>
                 
@@ -685,23 +75,7 @@ public:
                 </li>
                 
                 <li>
-                    <a href="/categories/">Categories</a>
-                </li>
-                
-                <li>
-                    <a href="/links/">Links</a>
-                </li>
-                
-                <li>
-                    <a href="/open-source/">Open Source Projects</a>
-                </li>
-                
-                <li>
-                    <a href="/tags/">repository</a>
-                </li>
-                
-                <li>
-                    <a href="/wiki/">Wiki</a>
+                    <a href="/repository/">repository</a>
                 </li>
                 
             </ul>
@@ -718,8 +92,6 @@ public:
         background-image: url('/img/orange.jpg')
     }
 </style>
-
-
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -740,65 +112,15 @@ public:
 </header>
 
 
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “丑数 II">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “丑数 II” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/15
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
 
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h2 id="题目ugly-number-ii">题目Ugly Number II：</h2>
+                <h2 id="题目ugly-number-ii">题目Ugly Number II：</h2>
 
 <p>Ugly number is a number that only have factors 2, 3 and 5.
 Design an algorithm to find the nth ugly number. The first 10 ugly numbers are 1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</p>
@@ -1004,22 +326,22 @@ public:
 
 
 
-                  <hr>
+                <hr>
 
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/15/About-this-blog/" data-toggle="tooltip" data-placement="top" title="关于这个博客">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/15/About-this-blog/" data-toggle="tooltip" data-placement="top" title="关于这个博客">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                      
+                    
                         
     <script>
     var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
@@ -1029,110 +351,117 @@ public:
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
-                      
-              <!--
-                </div>
+                    
             </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
         </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
+    </div>
+</article>
 
 
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
 
-<script src="/assets/js/jquery.toc.js"></script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        </div>
-      </div>
 
-</section>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- kill the Facebook and Weibo -->
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
-<!-- /section.content -->
+                    
+                    <li>
+                        <a href="https://github.com/AlbertLZG">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <!--
+                    
+                    -->
 
+                    <!--
+                    
+                    -->
 
+                    
+                    <!--
+                    
+                    -->
 
-
-
-
-        <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+                </ul>
+                <p class="copyright text-muted">
+                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
+                </p>
             </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
         </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 
 </body>

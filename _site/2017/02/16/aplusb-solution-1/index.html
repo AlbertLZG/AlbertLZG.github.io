@@ -1,514 +1,3 @@
-<!--
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李志刚|读书·编程·思">
-
-<!--     <title>lintcode “A + B” 题解 &mdash; Albert_LZG's Blog</title> -->
-    <title>lintcode “A + B” 题解 - Albert_LZG's Blog</title>
-
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/aplusb-solution-1/"> -->
-    <link rel="canonical" href="http://localhost:4000/2017/02/16/aplusb-solution-1/">
-
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
-    <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-<!--     
-    <meta property="og:title" content="lintcode “A + B” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 A + B Problem："> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
-
-    <meta name="og:description" content="题目 A + B Problem：">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/aplusb-solution-1/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
-</head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
-
-    <!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/orange.jpg')
-    }
-</style>
-
-
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="Tags">
-                        
-                        <a class="tag" href="/Tags/#lintcode题解(python)" title="lintcode题解(python)">lintcode题解(python)</a>
-                        
-                    </div>
-                    <h1>lintcode “A + B” 题解</h1>
-                    
-                    <span class="meta">Posted by Albert_LZG on February 16, 2017</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “A + B">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “A + B” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
-
-
-
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-a--b-problem">题目 A + B Problem：</h1>
-
-<p>Write a function that add two numbers A and B. You should not use + or any arithmetic operators.</p>
-
-<p>Notice:
-There is no need to read data from standard input stream. Both parameters are given in function aplusb, you job is to calculate the sum and return it.</p>
-
-<p>Clarification:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Are a and b both 32-bit integers?    
-——Yes.
-Can I use bit operation?    
-——Sure you can.
-</code></pre>
-</div>
-
-<p>Example:
-Given a=1 and b=2 return 3</p>
-
-<h1 id="题目-a--b-问题">题目 A + B 问题：</h1>
-
-<p>给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。</p>
-
-<p>注意事项
-你不需要从输入流读入数据，只需要根据aplusb的两个参数a和b，计算他们的和并返回就行。</p>
-
-<p>说明：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>a和b都是 32位 整数么？
-——是的
-我可以使用位运算符么？
-——当然可以
-</code></pre>
-</div>
-
-<p>样例：
-如果 a=1 并且 b=2，返回3</p>
-
-<h2 id="思路">思路：</h2>
-
-<p>首先，题中给定，所有数均为32位大小。</p>
-
-<p>当不考虑进位时，加法可以用位运算“按位异或^”代替：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1 + 1 = 1 ^ 1 = 0
-1 + 0 = 1 ^ 0 = 1
-0 + 1 = 0 ^ 1 = 1
-0 + 0 = 0 ^ 0 = 0
-</code></pre>
-</div>
-
-<p>而进位可以用位运算“按位与&amp;”获取：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>0 + 0 = 0 &amp; 0 = 0 = 不进位
-1 + 0 = 1 &amp; 0 = 0 = 不进位
-0 + 1 = 0 &amp; 1 = 0 = 不进位
-1 + 1 = 1 &amp; 1 = 1 = 进位
-</code></pre>
-</div>
-
-<p>如果进行某一位的加法时产生了进位，那么在加高一位时需要将进位1也加进去，因此进位产生的加数应表示为：(x&amp;y)«1
-（注：需要左移一位表示每一位产生的进位是与高一位的数字相加的）
-因此，有：</p>
-<ol>
-  <li>x^y //执行加法</li>
-  <li>
-    <p>(x&amp;y)«1 //进位操作
-最后，我们有：x+y = x^y+(x&amp;y)«1</p>
-
-    <p>证明：x^y是不考虑进位时加法结果。当二进制位同时为1时，才    有进位，因此(x&amp;y)«1进位产生的值，称为进位补偿。将两者相    加便是完整加法结果。</p>
-  </li>
-</ol>
-
-<p>由于 x^y+(x&amp;y)«1 也可以表示为(x^y)^((x&amp;y)«1)与(x^y)&amp;((x&amp;y)«1)«1之和，因此可以迭代地使用1式和2式来将不考虑进位的加法结果与进位产生的加数相加，直到进位为0时，得到的不考虑进位的加法结果（即1式结果）即为最终结果。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>下面是两位数的加法：
-11+01 = 100  // 原始的加法
-// 位运算分别计算1）和2）
-1）11 ^ 01 = 10
-2）(11 &amp; 01) &lt;&lt; 1 = 10
-//用普通的加法去运算可以得到 10 + 10 = 100
-//但是由于不允许使用“+”，所以要让两个数再按前面的方法计算：
-1) 10 ^ 10 = 00
-2) (10 &amp; 10) &lt;&lt; 1 = 100
-再次迭代：
-1) 00 ^ 100 = 100
-2) (00 &amp; 100）&lt;&lt; 1 = 0
-此时进位为0，式1)结果即为最终结果
-</code></pre>
-</div>
-
-<p>代码：</p>
-
-<h4 id="python">python：</h4>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution:
-    """
-    @param a: The first integer
-    @param b: The second integer
-    @return:  The sum of a and b
-    """
-    def aplusb(self, a, b):
-        # write your code here, try to do it without arithmetic operators.
-        import ctypes
-        a = ctypes.c_int32(a).value
-        b = ctypes.c_int32(b).value
-        while b != 0:
-            carry = ctypes.c_int32(a &amp; b).value
-            a = ctypes.c_int32(a ^ b).value
-            b = ctypes.c_int32(carry &lt;&lt; 1).value
-        return a
-</code></pre>
-</div>
-<h4 id="c">c：</h4>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>1 int bitAdd(int a,int b)
-2 {
-3     if(b==0)
-4         return a;
-5     int sum = a^b;
-6     int carry =(a&amp;b)&lt;&lt;1;
-7     return bitAdd(sum,carry);
-8 }
-</code></pre>
-</div>
-
-<h4 id="c-1">c++:</h4>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        int i = 0;
-        int res = 0;
-        int carry = 0;
-        for (; i&lt;32; i++) {
-            int aa = (a &gt;&gt; i) &amp; 1;
-            int bb = (b &gt;&gt; i) &amp; 1;
-            res |= (aa ^ bb ^ carry) &lt;&lt; i;
-            if (aa == 1 &amp;&amp; bb == 1 || ((aa ==1 || bb == 1) &amp;&amp; carry == 1)) {
-                carry = 1;
-            }
-            else carry = 0;
-        }
-        return res;
-    }
-};
-</code></pre>
-</div>
-
-<p>或者</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution {
-    /*
-     * param a: The first integer
-     * param b: The second integer
-     * return: The sum of a and b
-     */
-    public int aplusb(int a, int b) {
-        while(b != 0){
-            int carry = a &amp; b;
-            a = a ^ b;
-            b = carry &lt;&lt; 1;
-        }
-        return a;
-    }
-}
-
-public int aplusb(int a, int b) {
-        // Click submit, you will get Accepted!
-        if (b == 0) return a;
-        int sum = a^b;
-        int carry = (a&amp;b)&lt;&lt;1;
-        return aplusb(sum, carry);
-    }
-</code></pre>
-</div>
-
-<p><img src="https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png" alt="" /></p>
-
-
-
-                  <hr>
-
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/trailingZeros-solution-2/" data-toggle="tooltip" data-placement="top" title="lintcode “尾部的零” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
-
-                      
-                        
-    <script>
-    var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
-    var idcomments_post_id;
-    var idcomments_post_url;
-    </script>
-    <span id="IDCommentsPostTitle" style="display:none"></span>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
-
-                      
-              <!--
-                </div>
-            </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
-        </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
-
-<script src="/assets/js/jquery.toc.js"></script>
-
-        </div>
-      </div>
-
-</section>
-
-<!-- /section.content -->
-
-
-
-
-
-    <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
-            </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
-        </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -516,37 +5,15 @@ public int aplusb(int a, int b) {
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="李志刚|读书·编程·思">
 
-<!--     <title>lintcode “A + B” 题解 &mdash; Albert_LZG's Blog</title> -->
     <title>lintcode “A + B” 题解 - Albert_LZG's Blog</title>
 
-    <link rel="stylesheet" href="/assets/vendor/primer-css/css/primer.css">
-    <link rel="stylesheet" href="/assets/vendor/primer-markdown/dist/user-content.min.css">
-    <link rel="stylesheet" href="/assets/vendor/octicons/octicons/octicons.css">
-    <link rel="stylesheet" href="/assets/css/components/collection.css">
-    <link rel="stylesheet" href="/assets/css/components/repo-card.css">
-    <link rel="stylesheet" href="/assets/css/sections/repo-list.css">
-    <link rel="stylesheet" href="/assets/css/sections/mini-repo-list.css">
-    <link rel="stylesheet" href="/assets/css/components/boxed-group.css">
-    <link rel="stylesheet" href="/assets/css/globals/common.css">
-    <link rel="stylesheet" href="/assets/vendor/share.js/dist/css/share.min.css">
-    <link rel="stylesheet" href="/assets/css/globals/responsive.css">
-    <link rel="stylesheet" href="/assets/css/posts/index.css">
-    <!-- Latest compiled and minified CSS -->
-    
-
-<!--      -->
-    <!-- <link rel="canonical" href="http://localhost:4000/2017/02/16/aplusb-solution-1/"> -->
     <link rel="canonical" href="http://localhost:4000/2017/02/16/aplusb-solution-1/">
 
-    <link rel="alternate" type="application/atom+xml" title="Albert_LZG's Blog" href="">
-
-<!--     <link rel="shortcut icon" href="/favicon.ico"> -->
     <!-- Icons -->
-    <link rel="shortcut icon" href="img/blog_logo1.ico">
+  <link rel="shortcut icon" href="img/blog_logo1.ico">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -562,63 +29,14 @@ public int aplusb(int a, int b) {
     <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<!--     
-    <meta property="og:title" content="lintcode “A + B” 题解">
-      
-    <meta name="keywords" content="">
-    <meta name="og:keywords" content="">
-       -->
-<!--     <meta name="description" content="题目 A + B Problem："> -->
-<!--     <meta name="description" content="李志刚|读书·编程·思">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <meta name="og:description" content="题目 A + B Problem：">
-      
-
-    
-
-    
-        
-    
-
-    <meta property="og:url" content="http://localhost:4000/2017/02/16/aplusb-solution-1/">
-    <meta property="og:site_name" content="Albert_LZG's Blog">
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="zh_CN" />
-
-    
-    <meta property="article:published_time" content="2017-02-16">
-     -->
-
-<!--     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-
-    function toggleMenu() {
-        var nav = document.getElementsByClassName("site-header-nav")[0];
-        if (nav.style.display == "inline-flex") {
-          nav.style.display = "none";
-        } else {
-          nav.style.display = "inline-flex";
-        }
-    }
-    </script> -->
 </head>
-
-<!-- <body class="" data-mz="">
-    <header class="site-header">
-        <div class="container">
-            <h1><a href="/" title="Albert_LZG's Blog"><span class="octicon octicon-mark-github"></span> Albert_LZG's Blog</a></h1>
-            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav class="site-header-nav" role="navigation">
-                
-            </nav>
-        </div>
-    </header> -->
-    <!-- / header -->
 
 
 
@@ -649,14 +67,6 @@ public int aplusb(int a, int b) {
                 </li>
                 
                 <li>
-                    <a href="/404.html">页面没有找到</a>
-                </li>
-                
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-                
-                <li>
                     <a href="/about/">About</a>
                 </li>
                 
@@ -665,23 +75,7 @@ public int aplusb(int a, int b) {
                 </li>
                 
                 <li>
-                    <a href="/categories/">Categories</a>
-                </li>
-                
-                <li>
-                    <a href="/links/">Links</a>
-                </li>
-                
-                <li>
-                    <a href="/open-source/">Open Source Projects</a>
-                </li>
-                
-                <li>
-                    <a href="/tags/">repository</a>
-                </li>
-                
-                <li>
-                    <a href="/wiki/">Wiki</a>
+                    <a href="/repository/">repository</a>
                 </li>
                 
             </ul>
@@ -698,8 +92,6 @@ public int aplusb(int a, int b) {
         background-image: url('/img/orange.jpg')
     }
 </style>
-
-
 <header class="intro-header" >
     <div class="container">
         <div class="row">
@@ -720,65 +112,15 @@ public int aplusb(int a, int b) {
 </header>
 
 
-<link rel="stylesheet" href="/css/backtop.css">  <!-- Back Top -->
-<script type="text/javascript" src="/js/backtop.js"></script>  <!-- Back Top -->
-
-<div id="back-top">
-  <a href="#top" title="回到顶部"></a>
-</div>
-
-<!--
-<section class="collection-head small geopattern" data-pattern-id="lintcode “A + B">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-
-        <h1 class="collection-header">lintcode “A + B” 题解</h1>
-        <div class="collection-info">
-          
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> 2017/02/16
-          </span>
-          
-          
-          
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="/categories/#blog" title="blog">blog</a>
-          </span>
-          
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
--->
 
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-<!-- / .banner -->
-
-<section class="container content">
-
-
-      <div class="columns">
-      <!--
-        <div class="column three-fourths" >
-      -->
-        <div class="column four-fifths" >
-          <!--article class="article-content markdown-body"-->
-
-          <article>
-            <div class="container">
-              <!--
-              <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-              -->
-                  <h1 id="题目-a--b-problem">题目 A + B Problem：</h1>
+                <h1 id="题目-a--b-problem">题目 A + B Problem：</h1>
 
 <p>Write a function that add two numbers A and B. You should not use + or any arithmetic operators.</p>
 
@@ -964,22 +306,22 @@ public int aplusb(int a, int b) {
 
 
 
-                  <hr>
+                <hr>
 
-                  <ul class="pager">
-                      
-                      <li class="previous">
-                          <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">&larr; Previous Post</a>
-                      </li>
-                      
-                      
-                      <li class="next">
-                          <a href="/2017/02/16/trailingZeros-solution-2/" data-toggle="tooltip" data-placement="top" title="lintcode “尾部的零” 题解">Next Post &rarr;</a>
-                      </li>
-                      
-                  </ul>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/16/Binary-Tree-Preorder-Traversal-66-67-68-69/" data-toggle="tooltip" data-placement="top" title="lintcode “二叉树遍历” 题解">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/16/trailingZeros-solution-2/" data-toggle="tooltip" data-placement="top" title="lintcode “尾部的零” 题解">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                      
+                    
                         
     <script>
     var idcomments_acct = '5217197c8d56ca2b4c67384f56734c2e';
@@ -989,110 +331,117 @@ public int aplusb(int a, int b) {
     <span id="IDCommentsPostTitle" style="display:none"></span>
     <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
-                      
-              <!--
-                </div>
+                    
             </div>
-            -->
-          </div>
-          <!--
-          
-
-          -->
-          </article>
-
-          <!--div class="share">
-            <div class="share-component"></div>
-          </div>
-          <div class="comment">
-            
-  
-
-
-          </div-->
         </div>
-        <!--
-        <div class="column one-fourth">
-        -->
-        <div class="column one-fifth">
-          
-<h3>Search</h3>
-<div id="site_search">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"><span class="octicon octicon-search"></span></button>
-</div>
-
-<ul id="search_results"></ul>
-
-<link rel="stylesheet" type="text/css" href="/assets/css/modules/sidebar-search.css">
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
+    </div>
+</article>
 
 
-          
-<h3 class="mobile-hidden">Post Directory</h3>
-<div id="post-directory-module" class="mobile-hidden">
-  <section class="post-directory">
-  <!-- Links that trigger the jumping -->
-  <!-- Added by javascript below -->
-  <dl></dl>
-  </section>
-</div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
 
-<script src="/assets/js/jquery.toc.js"></script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        </div>
-      </div>
 
-</section>
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- kill the Facebook and Weibo -->
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
-<!-- /section.content -->
+                    
+                    <li>
+                        <a href="https://github.com/AlbertLZG">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <!--
+                    
+                    -->
 
+                    <!--
+                    
+                    -->
 
+                    
+                    <!--
+                    
+                    -->
 
-
-
-
-        <footer class="container">
-        <div class="site-footer" role="contentinfo">
-            <div class="copyright left mobile-block">
-                    © 2015
-                    <span title=""></span>
-                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+                </ul>
+                <p class="copyright text-muted">
+                &copy; 2017 Albert_LZG ❖ Powered by Jekyll.
+                </p>
             </div>
-
-            <ul class="site-footer-links right mobile-hidden">
-                <li>
-                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
-                </li>
-            </ul>
-            <a href="http://github.com/AlbertLZG/AlbertLZG.github.io" target="_blank" aria-label="view source code">
-                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-            </a>
-            <ul class="site-footer-links mobile-hidden">
-                
-                <li><a href=""><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
-            </ul>
-
         </div>
-    </footer>
-    <!-- / footer -->
-    <script src="/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="/assets/js/geopattern.js"></script>
-    <script src="/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="/assets/css/globals/prism.css">
-    <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
-        });
-       // hljs.initHighlightingOnLoad();
-      });
-    </script>
-    
-</body>
-</html>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+
+<!-- Highlight.js -->
+<script>
+    async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js",function(){
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+<link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 
 
 </body>
