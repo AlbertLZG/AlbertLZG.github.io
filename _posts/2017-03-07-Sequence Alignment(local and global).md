@@ -58,20 +58,20 @@ Given two sequences U, V, and a scoring function w\( \), asks to find the optima
 
 ### Method：Dynamic Programming
 
-1. Define Scoring Function
+* Define Scoring Function
 
 As an example, the scoring functions are defined as:
 d\(match\) = 0
 d\(mismatch\) = 1
 d\(indel\) = 1
 
-2. The Recursive Function
+* The Recursive Function
 
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2022.34.04.png)
 
-3. Boundaries:
+* Boundaries:
 
 S\(u1…ui,-\) = i \* w(indel)
 S\(-,v1…vj\) = j \* w(indel)
@@ -79,7 +79,7 @@ Then, The number of S scores is \(m+1\)\*\(n+1\), polynomial to m and n.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
-4. DP Algorithm:
+* DP Algorithm:
 
 pseudocode：
 ```
@@ -97,7 +97,7 @@ R <— S[|U|][|V|]
 T <= trace back to S(−, −) according from S[|U|][|V|] 
 ```
 
-5. Time & Space Complex
+* Time & Space Complex
 
 O(M × N) & O(M × N)
 
@@ -295,30 +295,30 @@ Given two sequences U, V, and a scoring function w\( \), the optimal local align
 
 >Note: w\( \) is to be defined by your model. “global” means every base is considered.
 
-* **Method：Dynamic Programming**
+### Method：Dynamic Programming**
 
-1. Define Scoring Function
+* Define Scoring Function
 
 As an example, the scoring functions are defined as:
 w\(match\) = 3
 W\(mismatch\) = -1
 w\(indel\) = -3
 
-2. The Recursive Function
+* The Recursive Function
 
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.55.19.png)
 
-3. Boundaries:
+* Boundaries:
 
 S\(u1…ui,-\) = max\(i \* w(indel),0\)
 S\(-,v1…vj\) = max\(j \* w(indel),0\)
 Then, The number of S scores is \(m+1\)\*\(n+1\), polynomial to m and n.
 
-![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
-4. DP Algorithm:
+* DP Algorithm:
 
 pseudocode：
 
@@ -338,7 +338,7 @@ T <= trace back to S(−, −) according to the optimal score at
 S(u1…um,v1…vn)
 ```
 
-5. Time & Space Complex
+* Time & Space Complex
 O(M × N) & O(M × N)
 
 ### Code \( python \)
