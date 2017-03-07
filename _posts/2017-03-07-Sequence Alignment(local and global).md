@@ -11,8 +11,9 @@ tags: [算法]
 
 **Problem：**
 
->Given two sequences U and V, how to measure the similarity between U and V?
->	——We need to make sequence alignment between U and V.
+Given two sequences U and V, how to measure the similarity between U and V?
+
+	——We need to make sequence alignment between U and V.
 
 ### Definition：
 
@@ -20,7 +21,7 @@ Given two sequences U and V (from a large database), the alignment of U and V is
 
 **Problem：**
 
->How many alignments there are between two sequences?
+How many alignments there are between two sequences?
 
 >Hint:
 >Remember this picture in my post 《算法与数据结构基础知识》?（You can find it in the post of February 28, 2017）
@@ -33,9 +34,9 @@ Given two sequences U and V (from a large database), the alignment of U and V is
 
 **Problem：**
 
->There are many alignments between U and V, How do we measure how good an alignment is?
+There are many alignments between U and V, How do we measure how good an alignment is?
 
->	——To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
+	——To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
 
 #### **Similarity Scoring Function**
 
@@ -100,7 +101,7 @@ T <= trace back to S(−, −) according from S[|U|][|V|]
 
 O(M × N) & O(M × N)
 
-### Code\(python\)
+### Code \( python \)
 ```
 #! usr/bin/python
 #coding=utf-8
@@ -340,7 +341,7 @@ S(u1…um,v1…vn)
 5. Time & Space Complex
 O(M × N) & O(M × N)
 
-### Code\(python\)
+### Code \( python \)
 ```
 
 #! usr/bin/python
