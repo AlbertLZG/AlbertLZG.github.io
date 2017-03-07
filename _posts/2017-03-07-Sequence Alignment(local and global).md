@@ -9,7 +9,7 @@ tags: [算法]
 
 # Sequence Alignment
 
-	**Problem：** 
+**Problem：**
 	Given two sequences U and V, how to measure the similarity between U and V?
 		——We need to make sequence alignment between U and V.
 
@@ -17,7 +17,8 @@ tags: [算法]
 
 Given two sequences U and V (from a large database), the alignment of U and V is to insert space (“-“) into the sequences to make them the same length n. Note that the alignment of “-“ and “-“ is forbidden.
 
->How many alignments there are between two sequences?
+**Problem：**
+	How many alignments there are between two sequences?
 
 >Hint:
 Remember this picture in my post 《算法与数据结构基础知识》?（You can find it in the post of February 28, 2017）
@@ -28,7 +29,7 @@ How many paths can be taken from the upper left to the lower right？（You can 
 
 ### Alignment Score
 
->There are many alignments between U and V, How do we measure how good an alignment is?
+	There are many alignments between U and V, How do we measure how good an alignment is?
 
 To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
 
@@ -47,8 +48,8 @@ Sometimes the distance score is used : example d\(match\)=0, d\(mismatch\)=1, d\
 # Optimal global alignment
 
 Problem Definition: 
-Given two sequences U, V, and a scoring function w\(\), asks to find the optimal global alignment that has the maximum score.
->Note: w\(\) is to be defined by your model. “global” means every base is considered.
+Given two sequences U, V, and a scoring function w\( \), asks to find the optimal global alignment that has the maximum score.
+>Note: w\( \) is to be defined by your model. “global” means every base is considered.
 
 ### Method：Dynamic Programming
 
@@ -67,9 +68,9 @@ Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended
 
 3. Boundaries:
 
-    S\(u1…ui,-\) = i $\times$ w(indel)
-    S\(-,v1…vj\) = j $\times$ w(indel)
-    Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
+S\(u1…ui,-\) = i $\times$ w(indel)
+S\(-,v1…vj\) = j $\times$ w(indel)
+Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
@@ -282,9 +283,9 @@ Under this algorithm, the number of indels is approximate to the number of misma
 
 # Optimal local alignment
 
-Given two sequences U, V, and a scoring function w\(\), the optimal local alignment is to find a substring p of A and a substring q of B, such that S\(p,q\) has the maximum alignment score.
+Given two sequences U, V, and a scoring function w\( \), the optimal local alignment is to find a substring p of A and a substring q of B, such that S\(p,q\) has the maximum alignment score.
 
->Note: w\(\) is to be defined by your model. “global” means every base is considered.
+>Note: w\( \) is to be defined by your model. “global” means every base is considered.
 
 * **Method：Dynamic Programming**
 
@@ -303,9 +304,9 @@ Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended
 
 3. Boundaries:
 
-    S\(u1…ui,-\) = max\(i $\times$ w(indel),0\)
-    S\(-,v1…vj\) = max\(j $\times$ w(indel),0\)
-    Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
+S\(u1…ui,-\) = max\(i $\times$ w(indel),0\)
+S\(-,v1…vj\) = max\(j $\times$ w(indel),0\)
+Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
