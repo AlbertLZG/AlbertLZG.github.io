@@ -32,7 +32,7 @@ How many paths can be taken from the upper left to the lower right？（You can 
 
 To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
 
-* **Similarity Scoring Function**
+#### **Similarity Scoring Function**
 
 Use w\(match\), w\(mismatch\) and w\(indel\) to represent the scoring function. Then, the score of an alignment is defined by sum the score of each column. For example:
 
@@ -45,11 +45,12 @@ Clearly, how good an alignment is depends on the scoring function you define!
 Sometimes the distance score is used : example d\(match\)=0, d\(mismatch\)=1, d\(indel\)=2. In this case, a lower score means a better alignment.
 
 # Optimal global alignment
+
 Problem Definition: 
 Given two sequences U, V, and a scoring function w\(\), asks to find the optimal global alignment that has the maximum score.
 >Note: w\(\) is to be defined by your model. “global” means every base is considered.
 
-* **Method：Dynamic Programming**
+### Method：Dynamic Programming
 
 1. Define Scoring Function
 
@@ -91,12 +92,8 @@ T <= trace back to S(−, −) according from S[|U|][|V|]
 
 O(M × N) & O(M × N)
 
-### Code
-
-python
-
+### Code\(python\)
 ```
-
 #! usr/bin/python
 #coding=utf-8
 
@@ -205,7 +202,6 @@ f1.write("".join(seq2[i*len_row:])+'\n\n')
 f1.close()
 
 ```
-
 ### Result
 
 The best distance score between sequence1 and sequence2: 277
@@ -276,10 +272,12 @@ The sequence1 and the sequence2:
 	AATACGTTCCCGGGCCTTGTACACACCGCCCGTCAAGCCATGAAAGCCGGGGGCACCTGAAGGCTGCGGC 
 	AATACGTTCCCGGGCCTTG__CAC________TCA__CC__G____CC_____C____G_____T_C___
 
-There are 1526 characters in total in each sequence. The two sequences show 1249 matched characters, 112 mismatched and 165 indels.
+There are 1526 characters in total in each sequence. 
+The two sequences show 1249 matched characters, 112 mismatched and 165 indels.
+
 The score of optimal alignment is 277, which equals to 0*1249+1*112+1*165.
-Under this algorithm, the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165), different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is equal to mismatched character. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have
-a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions -.
+
+Under this algorithm, the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165), different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is equal to mismatched character. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions.
 
 
 # Optimal local alignment
@@ -331,10 +329,7 @@ S(u1…um,v1…vn)
 5. Time & Space Complex
 O(M × N) & O(M × N)
 
-### Code
-
-python
-
+### Code\(python\)
 ```
 
 #! usr/bin/python
@@ -441,7 +436,6 @@ f1.write("".join(seq2[i*len_row:])+'\n\n')
 f1.close()
 
 ```
-
 ### Result 
 
 The best distance score between sequence1 and sequence2: 3165
@@ -510,7 +504,9 @@ The sequence1 and the sequence2:
 	TGAAGCTGGATTCGCTAGTAATCGCGCATCAGCCATGGCGCGGTGAATACGTTCCCGGGCCTTGCACTCA
 
 The two sequences, each of total 1412 characters, show 1222 matched characters, 164 mismatched and 26 indels.
+
 The score of optimal alignment is 3424, which equals to 3*1222-1*164- 3*26.
+
 Noting that the number of indels is much less than the number of mismatched characters, it is reasonable because the score of indel is minus three, much lower than that of mismatched, minus one. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
 
 
