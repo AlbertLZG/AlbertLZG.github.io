@@ -523,4 +523,4 @@ The score of optimal alignment is 3424, which equals to 3*1222-1*164- 3*26.
 Noting that the number of indels is much less than the number of mismatched characters, it is reasonable because the score of indel is minus three, much lower than that of mismatched, minus one. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
 
 
-![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)
