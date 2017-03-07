@@ -7,12 +7,11 @@ tags: [算法]
 ---
 注：内容主要来自清华大学陈挺老师的《高级算法分析与设计》课中所做的笔记和作业。
 
-Problem： 
-
-Given two sequences U and V, how to measure the similarity between U and V?
-——We need to make sequence alignment between U and V.
-
 # Sequence Alignment
+
+	**Problem：** 
+	Given two sequences U and V, how to measure the similarity between U and V?
+		——We need to make sequence alignment between U and V.
 
 ### Definition：
 
