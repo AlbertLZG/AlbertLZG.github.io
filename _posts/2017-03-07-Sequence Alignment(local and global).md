@@ -36,9 +36,9 @@ To measure how good an alignment is, you need to compute the score of it. Then, 
 
 Use w\(match\), w\(mismatch\) and w\(indel\) to represent the scoring function. Then, the score of an alignment is defined by sum the score of each column. For example:
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 21.24.07.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.07.png)
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 21.24.31.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.31.png)
 
 Clearly, how good an alignment is depends on the scoring function you define!
 
@@ -62,7 +62,7 @@ d\(indel\) = 1
 
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 22.34.04.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2022.34.04.png)
 
 3. Boundaries:
 
@@ -70,7 +70,7 @@ Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended
     S\(-,v1…vj\) = j $\times$ w(indel)
     Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 21.38.47.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
 4. DP Algorithm:
 
@@ -213,8 +213,6 @@ f1.close()
 
 * **result**
 
-```
-
 The best distance score between sequence1 and sequence2: 277
 The length of sequence1 and sequence2: 1526  1526
 The running time is: 4.625369
@@ -282,13 +280,15 @@ A_TCGGAGTCTGCAACCCGACCCCGTGAAGCTGGATTCGCTAGTAATCGCGCATCAGCCATGGCGCGGTG
 <br />
 AATACGTTCCCGGGCCTTGTACACACCGCCCGTCAAGCCATGAAAGCCGGGGGCACCTGAAGGCTGCGGC 
 AATACGTTCCCGGGCCTTG__CAC________TCA__CC__G____CC_____C____G_____T_C___
-```
+
 There are 1526 characters in total in each sequence. The two sequences show 1249 matched characters, 112 mismatched and 165 indels.
 The score of optimal alignment is 277, which equals to 0*1249+1*112+1*165.
 Under this algorithm, the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165), different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is equal to mismatched character. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have
 a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions -.
 
+
 ###Optimal local alignment
+
 Given two sequences U, V, and a scoring function w\(\), the optimal local alignment is to find a substring p of A and a substring q of B, such that S\(p,q\) has the maximum alignment score.
 
 >Note: w\(\) is to be defined by your model. “global” means every base is considered.
@@ -296,23 +296,30 @@ Given two sequences U, V, and a scoring function w\(\), the optimal local alignm
 * **Method：Dynamic Programming**
 
 1. Define Scoring Function
+
 As an example, the scoring functions are defined as:
 w\(match\) = 3
 W\(mismatch\) = -1
 w\(indel\) = -3
 
 2. The Recursive Function
+
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 21.55.19.png)
+
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.55.19.png)
 
 3. Boundaries:
+
     S\(u1…ui,-\) = max\(i $\times$ w(indel),0\)
     S\(-,v1…vj\) = max\(j $\times$ w(indel),0\)
     Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-03-07 21.38.47.png)
+
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
 4. DP Algorithm:
+
 pseudocode：
+
 ```
 Input: U, V, w() //U = (u1……um), V = (v1……vn)
 Output: R: optimal local alignment score, T: optimal alignment 
@@ -447,9 +454,6 @@ f1.close()
 
 * **result**  
 
-
-```
-
 The best distance score between sequence1 and sequence2: 3165
 The length of sequence1 and sequence2: 1412  1412
 The running time is: 5.353489
@@ -514,8 +518,6 @@ CTACCCGGCGACGGGATGCCAATCCCCAAATCCTCTCTCAGTTCGGATCGGAGTCTGCAACCCGACCCCG
 <br />
 CGAAGCTGGATTCGCTAGTAATCGCGCATCAGCCATGGCGCGGTGAATACGTTCCCGGGCCTTGTACACA 
 TGAAGCTGGATTCGCTAGTAATCGCGCATCAGCCATGGCGCGGTGAATACGTTCCCGGGCCTTGCACTCA
-
-```
 
 The two sequences, each of total 1412 characters, show 1222 matched characters, 164 mismatched and 26 indels.
 The score of optimal alignment is 3424, which equals to 3*1222-1*164- 3*26.
