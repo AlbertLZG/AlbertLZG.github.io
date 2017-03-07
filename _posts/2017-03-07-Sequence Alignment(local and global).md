@@ -10,36 +10,40 @@ tags: [算法]
 # Sequence Alignment
 
 **Problem：**
-	Given two sequences U and V, how to measure the similarity between U and V?
-		——We need to make sequence alignment between U and V.
+
+>Given two sequences U and V, how to measure the similarity between U and V?
+>	——We need to make sequence alignment between U and V.
 
 ### Definition：
 
 Given two sequences U and V (from a large database), the alignment of U and V is to insert space (“-“) into the sequences to make them the same length n. Note that the alignment of “-“ and “-“ is forbidden.
 
 **Problem：**
-	How many alignments there are between two sequences?
+
+>How many alignments there are between two sequences?
 
 >Hint:
-Remember this picture in my post 《算法与数据结构基础知识》?（You can find it in the post of February 28, 2017）
-How many paths can be taken from the upper left to the lower right？（You can move to the right/down/lower right element each step）
+>Remember this picture in my post 《算法与数据结构基础知识》?（You can find it in the post of February 28, 2017）
+>How many paths can be taken from the upper left to the lower right？（You can move to the right/down/lower right element each step）
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
 
 
 ### Alignment Score
 
-	There are many alignments between U and V, How do we measure how good an alignment is?
+**Problem：**
 
-To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
+>There are many alignments between U and V, How do we measure how good an alignment is?
+
+>	——To measure how good an alignment is, you need to compute the score of it. Then, how to compute the score when given an alignment?
 
 #### **Similarity Scoring Function**
 
 Use w\(match\), w\(mismatch\) and w\(indel\) to represent the scoring function. Then, the score of an alignment is defined by sum the score of each column. For example:
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.07.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.07.png)
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.31.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.24.31.png)
 
 Clearly, how good an alignment is depends on the scoring function you define!
 
@@ -64,25 +68,28 @@ d\(indel\) = 1
 
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2022.34.04.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2022.34.04.png)
 
 3. Boundaries:
 
-S\(u1…ui,-\) = i $\times$ w(indel)
-S\(-,v1…vj\) = j $\times$ w(indel)
-Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
+S\(u1…ui,-\) = i \* w(indel)
+S\(-,v1…vj\) = j \* w(indel)
+Then, The number of S scores is \(m+1\)\*\(n+1\), polynomial to m and n.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
 4. DP Algorithm:
 
 pseudocode：
 ```
-Input: U, V, w() //U = (u1……um), V = (v1……vn)
+#U = (u1……um), V = (v1……vn)
+Input: U, V, w() 
 Output: R: optimal local alignment score, T: optimal alignment 
 
-Initiate s[0][j] and s[i][0] // first row and first column
-For i=1 to |U| //|U| is the length of sequence U
+#Initiate first row and first column
+Initiate s[0][j] and s[i][0] 
+#Compute S scores (|U|、|V| is the length of sequence U、V)
+For i=1 to |U| 
     For i=j to |V| 
         Compute S[i][j] 
 R <— S[|U|][|V|] 
@@ -300,26 +307,29 @@ w\(indel\) = -3
 
 Define S\(u1…ui,v1…vj\) to be the score of the optimal local alignment ended at ui and vj.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.55.19.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.55.19.png)
 
 3. Boundaries:
 
-S\(u1…ui,-\) = max\(i $\times$ w(indel),0\)
-S\(-,v1…vj\) = max\(j $\times$ w(indel),0\)
-Then, The number of S scores is \(m+1\)$\times$\(n+1\), polynomial to m and n.
+S\(u1…ui,-\) = max\(i \* w(indel),0\)
+S\(-,v1…vj\) = max\(j \* w(indel),0\)
+Then, The number of S scores is \(m+1\)\*\(n+1\), polynomial to m and n.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-07-sequence-alignment/2017-03-07%2021.38.47.png)
 
 4. DP Algorithm:
 
 pseudocode：
 
 ```
-Input: U, V, w() //U = (u1……um), V = (v1……vn)
+#U = (u1……um), V = (v1……vn)
+Input: U, V, w() 
 Output: R: optimal local alignment score, T: optimal alignment 
 
-Initiate s[0][j] and s[i][0] // first row and first column
-For i=1 to |U| //|U| is the length of sequence U
+#Initiate first row and first column
+Initiate s[0][j] and s[i][0] 
+#Compute S scores (|U|、|V| is the length of sequence U、V)
+For i=1 to |U| 
     For i=j to |V| 
         Compute S[i][j] 
 R <— Find the optimal score at S(u1…um,v1…vn)  
@@ -511,4 +521,4 @@ The score of optimal alignment is 3424, which equals to 3*1222-1*164- 3*26.
 Noting that the number of indels is much less than the number of mismatched characters, it is reasonable because the score of indel is minus three, much lower than that of mismatched, minus one. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
 
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)
+![](https:#raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)
