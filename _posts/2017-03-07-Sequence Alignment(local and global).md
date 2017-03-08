@@ -304,7 +304,7 @@ Given two sequences U, V, and a scoring function w\( \), the optimal local align
 
 >Note: w\( \) is to be defined by your model. “global” means every base is considered.
 
-### Method：Dynamic Programming**
+### Method：Dynamic Programming
 
 * Define Scoring Function
 
