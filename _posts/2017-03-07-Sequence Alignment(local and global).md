@@ -104,6 +104,11 @@ O(M × N) & O(M × N)
 
 ### Code \( python \)
 ```
+#--------------------------------------------------------------------#
+#Title：Optimal global alignment
+#Author: Albert_LZG/李志刚
+#Note：Reprint please indicate the source and the author
+#--------------------------------------------------------------------#
 #! usr/bin/python
 #coding=utf-8
 
@@ -215,8 +220,11 @@ f1.close()
 ### Result
 
 The best distance score between sequence1 and sequence2: 277
+
 The length of sequence1 and sequence2: 1526  1526
+
 The running time is: 4.625369
+
 The sequence1 and the sequence2:
 
 	AGAGTTTGATCCTGGCTCAGGATGAACGCTAGCTACAGGCTTAACACATGCAAGTCGAGGGGCATCAGGG
@@ -344,6 +352,11 @@ O(M × N) & O(M × N)
 
 ### Code \( python \)
 ```
+#--------------------------------------------------------------------#
+#Title：Optimal local alignment
+#Author: Albert_LZG/李志刚
+#Note：Reprint please indicate the source and the author
+#--------------------------------------------------------------------#
 
 #! usr/bin/python
 #coding=utf-8
@@ -452,8 +465,11 @@ f1.close()
 ### Result 
 
 The best distance score between sequence1 and sequence2: 3165
+
 The length of sequence1 and sequence2: 1412  1412
+
 The running time is: 5.353489
+
 The sequence1 and the sequence2:
 
 	AGAGTTTGATCCTGGCTCAGGATGAACGCTAGCTACAGGCTTAACACATGCAAGTCGAGGGGCATCAGGG 
