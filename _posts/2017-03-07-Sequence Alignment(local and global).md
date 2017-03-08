@@ -223,7 +223,7 @@ The best distance score between sequence1 and sequence2: 277
 
 The length of sequence1 and sequence2: 1526  1526
 
-The running time is: 4.625369
+The running time is: 4.625369s
 
 The sequence1 and the sequence2:
 
@@ -293,7 +293,7 @@ The sequence1 and the sequence2:
 There are 1526 characters in total in each sequence. 
 The two sequences show 1249 matched characters, 112 mismatched and 165 indels.
 
-The score of optimal alignment is 277, which equals to 0*1249+1*112+1*165.
+The score of optimal alignment is 277, which equals to 0\*1249+1\*112+1\*165.
 
 Under this algorithm, the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165), different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is equal to mismatched character. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions.
 
@@ -468,7 +468,7 @@ The best distance score between sequence1 and sequence2: 3165
 
 The length of sequence1 and sequence2: 1412  1412
 
-The running time is: 5.353489
+The running time is: 5.353489s
 
 The sequence1 and the sequence2:
 
@@ -534,7 +534,7 @@ The sequence1 and the sequence2:
 
 The two sequences, each of total 1412 characters, show 1222 matched characters, 164 mismatched and 26 indels.
 
-The score of optimal alignment is 3424, which equals to 3*1222-1*164- 3*26.
+The score of optimal alignment is 3424, which equals to 3\*1222-1\*164- 3\*26.
 
 Noting that the number of indels is much less than the number of mismatched characters, it is reasonable because the score of indel is minus three, much lower than that of mismatched, minus one. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
 
