@@ -59,6 +59,7 @@ Given two sequences U, V, and a scoring function w\( \), asks to find the optima
 
 ### Method：Dynamic Programming
 
+
 * Define Scoring Function
 
 As an example, the scoring functions are defined as:
@@ -295,7 +296,7 @@ The two sequences show 1249 matched characters, 112 mismatched and 165 indels.
 
 The score of optimal alignment is 277, which equals to 0\*1249+1\*112+1\*165.
 
-Under this algorithm, the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165), different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is equal to mismatched character. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions.
+Noting that the number of indels is approximate to the number of mismatched characters(i.e. 112 vs 165). It is reasonable because the score of indel is equal to mismatched character. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
 
 
 # Optimal local alignment
@@ -305,6 +306,7 @@ Given two sequences U, V, and a scoring function w\( \), the optimal local align
 >Note: w\( \) is to be defined by your model. “global” means every base is considered.
 
 ### Method：Dynamic Programming
+
 
 * Define Scoring Function
 
@@ -536,7 +538,7 @@ The two sequences, each of total 1412 characters, show 1222 matched characters, 
 
 The score of optimal alignment is 3424, which equals to 3\*1222-1\*164- 3\*26.
 
-Noting that the number of indels is much less than the number of mismatched characters, it is reasonable because the score of indel is minus three, much lower than that of mismatched, minus one. Thus, the optimal alignment of two sequences is not only determined by the sequences themselves, but also affected by the scoring functions we defined. Considering this relatively random initial definition, results of sequence alignment result is actually somewhat subjective.
+Under this algorithm, the number of indels is much less than the number of mismatched characters, different from the results of solution 1. It is also reasonable because the scoring functions have been changed, the score of indel is minus three, much lower than that of mismatched, minus one. Thus the results do verify my reasoning mentioned above, i.e. scoring functions have a huge effect on the sequence alignment results. To this sense, we can never be too careful to choose the scoring functions.
 
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/img/blog_logo.png)

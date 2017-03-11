@@ -114,15 +114,15 @@ ugly[2] = min(ugly[1]\*2, ugly[0]\*3, ugly[0]\*5) = min(2\*2, 1\*3, 1\*5) = 3 = 
 		……
 	里面最小的数是ugly[0]*5
 
-	因此只需要比较ugly[1]*2, ugly[0]*3, ugly[0]*5三个数，将其中的最小值作为下一个要添加的丑数即可。
+	因此只需要比较ugly[1]\*2, ugly[0]\*3, ugly[0]\*5三个数，将其中的最小值作为下一个要添加的丑数即可。
 
 3. 为什么这里要用3和5前面的乘数是ugly[0]而不是ugly[1]?
 	
-	因为ugly[1]>ugly[0],而ugly[0]*3和ugly[0]*5均是还没有添加进丑数序列的丑数，它们都分别比ugly[1]*3和ugly[1]*5小。
+	因为ugly[1]>ugly[0],而ugly[0]\*3和ugly[0]\*5均是还没有添加进丑数序列的丑数，它们都分别比ugly[1]*3和ugly[1]\*5小。
 
 4. 那2、3、5前面的乘数应该等于多少？
 
-	初始时设置索引变量index2=index3=index5=0分别代表相应乘数前面的数字是哪个丑数，即ugly[index2],ugly[index3],ugly[index5]。每当ugly[index2]*2被添加进丑数序列中时，令index2增加一，否则保持不变。3和5同理。下面用该方法求第四个丑数：)
+	初始时设置索引变量index2=index3=index5=0分别代表相应乘数前面的数字是哪个丑数，即ugly[index2],ugly[index3],ugly[index5]。每当ugly[index2]\*2被添加进丑数序列中时，令index2增加一，否则保持不变。3和5同理。下面用该方法求第四个丑数：)
 
 * 求解第四个丑数：
 
@@ -135,7 +135,7 @@ ugly[2] = min(ugly[1]\*2, ugly[0]\*3, ugly[0]\*5) = min(2\*2, 1\*3, 1\*5) = 3 = 
 
 ### 代码：
 
-	注意：代码需要考虑有重数问题，即当ugly[index2]\*2, ugly[index3]\*3, ugly[index5]\*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]\*2 = ugly[index3]\*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]\*3也被添加进去了。下面两段代码均有考虑该情况。
+	注意：代码需要考虑有重数问题，即当ugly[index2]*2, ugly[index3]*3, ugly[index5]*5三个数字有2个或者全部数字相等时应怎样？比如ugly[index2]*2 = ugly[index3]*3时，正确的做法应该是index2和index3都增加1，因为将ugly[index2]*2添加进丑数序列就意义着ugly[index3]*3也被添加进去了。下面两段代码均有考虑该情况。
 
 ##### python：
 ```
