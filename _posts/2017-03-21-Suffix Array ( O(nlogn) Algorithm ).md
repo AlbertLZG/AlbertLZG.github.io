@@ -31,7 +31,7 @@ A suffix array is a sorted array of all suffixes of a string.
 
 > Usually suffixes are sorted in lexicographical order .
 
-**example (from wikipedia)：**
+**Example (from wikipedia)：**
 
 Consider the text S=banana$ to be indexed:
 
