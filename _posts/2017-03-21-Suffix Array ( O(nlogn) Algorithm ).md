@@ -111,7 +111,6 @@ They are the same to some degree! Please think it.
 ### Code \( python \)
 
 ```
-
 #! usr/bin/python
 # coding=utf-8
 #--------------------------------------------------------------------#
@@ -276,19 +275,15 @@ the process of computation is as follows (you can see it in the screen when the 
 **the meaning of variants:**
 
 * index_pos: the suffix array.
-
 > index_pos[i] = k means the kth suffix is the ith element of the suffix array.
 
 * bucket_stage: buckets.
-
 > The same number means the same bucket.
 
 * pos_record: the record of unsettled elements’ positions.
-
 > The value means there are how many element in this bucket. -1 means the element is settled.
 
 * bucket_pos_plus_h:
-
 > ‘bucket_pos_plus_h’ is used to class those elements in the same bucket. The kth value equals the bucket’s number of the (k+h)th suffix for the kth suffix in the suffix array.
 
 It’s easy to find that the result is correct from this example. The code works pretty well!
