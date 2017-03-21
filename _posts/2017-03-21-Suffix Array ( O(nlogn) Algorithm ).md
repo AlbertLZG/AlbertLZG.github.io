@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Suffix Array ( O(nlogn) Algorithm)
+title: Suffix Array (O(nlogn) Algorithm)
 date: 2017-03-21
 categories: blog
 tags: [算法]
