@@ -37,21 +37,22 @@ Consider the text S=banana$ to be indexed:
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.31.24.png)
 
-Note: the special sentinel letter $ is lexicographically smaller than any other character. 
+> Note: the special sentinel letter $ is lexicographically smaller than any other character. 
 
 The text has the following suffixes:
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.31.30.png)
 
-The suffix array A contains the starting positions of these sorted suffixes. These suffixes can be sorted in ascending order and the result is:
+The suffix array A contains the starting positions of these sorted suffixes. These suffixes can be sorted in ascending order:
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.32.55.png)
 
 ### Solution
 
 Given text T of length N, query P of length p. 
+If we have the suffix array of text T, we can find all occurrences of pattern P in text T in O(plogN) time by binary search.
 
-If we have the suffix array of text T, we can find all occurrences of pattern P in text T in O(plogN) time by binary search.  Amazing!!!
+Amazing!!!
 
 **Problem：**
 
@@ -93,12 +94,16 @@ Total time: O(NlogN)
 
 ### Example:
 
-reference:
-    Larsson N J, Sadakane K. Faster suffix sorting[M]. Univ., 1999".
+Reference:
+    
+> Larsson N J, Sadakane K. Faster suffix sorting[M]. Univ., 1999".
     
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.01.03.png)
 
-This example is slightly different from the original O(NlogN) algorithm in the Construction of 2H-bucket. Replace 'Move Tpos[k]-h to next available place in its H-bucket' by 'Process each unsorted group in I with ternary-split Quicksort, using V[i+h] as the key for suffix i'. They are the same to some degree! Please think it.
+This example is slightly different from the original O(NlogN) algorithm in the Construction of 2H-bucket. 
+It replaces 'Move Tpos[k]-h to next available place in its H-bucket' with 'Process each unsorted group in I with ternary-split Quicksort, using V[i+h] as the key for suffix i'. 
+
+They are the same to some degree! Please think it.
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.01.15.png)
 
