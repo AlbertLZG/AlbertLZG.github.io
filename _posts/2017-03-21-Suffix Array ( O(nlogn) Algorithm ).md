@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Suffix Array ( O(nlogn) )
+title: Suffix Array ( O(nlogn) Algorithm)
 date: 2017-03-21
 categories: blog
 tags: [算法]
 ---
 注：内容主要来自清华大学陈挺老师的《高级算法分析与设计》课中所做的笔记和作业。
 
-# Suffix Array ( O(nlogn) )
+# Suffix Array ( O(nlogn) Algorithm)
 
 
 ### Problem：
@@ -21,9 +21,9 @@ How to find all occurrences of pattern P in text T.
 
 > Can we speed it up to O(|P|log(|T|)) by doing some preprocess to the T?
 
-> For large and relatively stable T and multiple searches, we can preprocess T into some data structure to speed up searches.
+For large and relatively stable T and multiple searches, we can preprocess T into some data structure to speed up searches.
 
-> Data Structure: suffix arrays, suffix trees, Hash tables.
+Data Structure: suffix arrays, suffix trees, Hash tables.
 
 ### Definition：
 
@@ -35,17 +35,17 @@ A suffix array is a sorted array of all suffixes of a string.
 
 Consider the text S=banana$ to be indexed:
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.31.24.png)
 
 Note: the special sentinel letter $ is lexicographically smaller than any other character. 
 
 The text has the following suffixes:
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.31.30.png)
 
 The suffix array A contains the starting positions of these sorted suffixes. These suffixes can be sorted in ascending order and the result is:
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.32.55.png)
 
 ### Solution
 
@@ -67,38 +67,40 @@ Here we introduce the O(NlogN) algorithm.
 
 **Procedure:**
 
-    1)	Starting from H=1 
+1. Starting from H=1 
     
-    2)	In stage H, all suffixes are sorted into buckets called H-Buckets, according to the first H characters. 
+2. In stage H, all suffixes are sorted into buckets called H-Buckets, according to the first H characters. 
     
-    3)	Using H-buckets to for 2H–sorting, which sorts all suffixes into 2H-buckets according to the first 2H characters. 
+3. Using H-buckets to for 2H–sorting, which sorts all suffixes into 2H-buckets according to the first 2H characters. 
     
-    4)  Repeat Steps 2-3 until H=N 
+4. Repeat Steps 2-3 until H=N 
 
 **From H-sorting to 2H-sorting**
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.53.50.png)
 
 **Construction of 2H-bucket**
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.50.57.png)
 
 **Time Complex**
 
     Sorting by first char: O(N)
+
     O(logN) stages of O(N) operations: O(NlogN)
-    Total time: O(NlogN)
+
+Total time: O(NlogN)
 
 ### Example:
 
 reference:
     Larsson N J, Sadakane K. Faster suffix sorting[M]. Univ., 1999".
     
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.01.03.png)
 
 This example is slightly different from the original O(NlogN) algorithm in the Construction of 2H-bucket. Replace 'Move Tpos[k]-h to next available place in its H-bucket' by 'Process each unsorted group in I with ternary-split Quicksort, using V[i+h] as the key for suffix i'. They are the same to some degree! Please think it.
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.01.15.png)
 
 
 ### Code \( python \)
@@ -107,12 +109,11 @@ This example is slightly different from the original O(NlogN) algorithm in the C
 
 #! usr/bin/python
 # coding=utf-8
-##-----------------------------------------------------------------------------##
-#									 Suffix Array——O(nlog(n))
-#
-#	作者：李志刚		 			 学号：2015310672			班级：自博15
-#	Author：Albert Li  	   Student ID：2015310672	   Class ID: Automation 15S
-##-----------------------------------------------------------------------------##
+#--------------------------------------------------------------------#
+#Title：Suffix Array——O(nlog(n))
+#Author: Albert_LZG/李志刚
+#Note：Reprint please indicate the source and the author
+#--------------------------------------------------------------------#
 import time
 import numpy as np
 
@@ -265,7 +266,7 @@ f1.close()
 
 the process of computation is as follows (you can see it in the screen when the code is running):
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-02-28-algorithm-base/2017-02-28 21.35.41.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.28.40.png)
 
 **the meaning of variants:**
 
