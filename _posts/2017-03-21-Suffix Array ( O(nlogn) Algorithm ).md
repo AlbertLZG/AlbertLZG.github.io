@@ -17,9 +17,9 @@ How to find all occurrences of pattern P in text T.
 
 —— KMP algorithm?  Too slow!
 
-> KMP Algorithm: O(|P|+|T|) time, slow for large T.
+    KMP Algorithm: O(|P|+|T|) time, slow for large T.
 
-> Can we speed it up to O(|P|log(|T|)) by doing some preprocess to the T?
+    Can we speed it up to O(|P|log(|T|)) by doing some preprocess to the T?
 
 For large and relatively stable T and multiple searches, we can preprocess T into some data structure to speed up searches.
 
@@ -82,7 +82,7 @@ Here we introduce the O(NlogN) algorithm.
 
 **Construction of 2H-bucket**
 
-![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.50.57.png)
+![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2013.53.57.png)
 
 **Time Complex**
 
