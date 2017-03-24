@@ -268,7 +268,7 @@ f1.close()
     
     TTOBE$
 
-the process of computation is as follows (you can see it in the screen when the code is running):
+the process of computation is as follows (you can see it on the screen when the code is running):
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-21-Suffix%20Array%20(%20O(nlogn)%20)/2017-03-21%2014.28.40.png)
 
