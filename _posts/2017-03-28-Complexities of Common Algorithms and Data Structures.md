@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Complexity of Common Algorithms and Data Structures
+title: Complexities of Common Algorithms and Data Structures
 date: 2017-03-28
 categories: blog
 tags: [算法, 数据结构]
@@ -8,7 +8,7 @@ tags: [算法, 数据结构]
 
 Reference from [http://bigocheatsheet.com/](http://bigocheatsheet.com/)
 
-# Complexity of Common Algorithms and Data Structures
+# Complexities of Common Algorithms and Data Structures
 
 ![](https://raw.githubusercontent.com/AlbertLZG/AlbertLZG.github.io/master/blog_img/2017-03-28-Complexity%20of%20Common%20Algorithms%20and%20Data%20Structures/2017-03-28%2019.08.04.png)
 
