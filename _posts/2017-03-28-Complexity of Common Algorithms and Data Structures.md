@@ -6,7 +6,7 @@ categories: blog
 tags: [算法, 数据结构]
 ---
 
-Reference form [http://bigocheatsheet.com/](http://bigocheatsheet.com/)
+Reference from [http://bigocheatsheet.com/](http://bigocheatsheet.com/)
 
 # Complexity of Common Algorithms and Data Structures
 
