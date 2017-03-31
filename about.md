@@ -12,14 +12,14 @@ header-img: "img/green.jpg"
 欢迎来到李志刚的博客。
 
 
-###MOTTO：
+### MOTTO：
 
 - Practice makes perfect
 
 - There is nothing noble in being superior to some other man.The true nobility is in being superior to your previous self.                            By Ernest Hemingwary
 
 
-###领域：
+### 领域：
 
 - 深度学习
 - 计算机视觉
@@ -30,7 +30,7 @@ header-img: "img/green.jpg"
 
 
 
-###联系
+### 联系
 
 - [博客：https://albertlzg.github.io/](https://albertlzg.github.io/)
 - [Github](https://github.com/AlbertLZG)

@@ -125,7 +125,7 @@ time_start = time.clock()
 # Read original data
 seq_num1 = 1
 file_object1 = open('sequence' + str(seq_num1) + '.txt')
-# Delete nonalpha characters and save them in upper case using list.
+# Delete nonalpha characters and save them in upper case using array.
 data1 = np.asarray(list(file_object1.read().upper().replace("\n", "").replace("\r", "")))
 file_object1.close()
 
