@@ -6,7 +6,7 @@ header-img: "img/semantic.jpg"
 ---
 
 
-##文章列表
+## 文章列表
 
 
 <div id='tag_cloud'>
